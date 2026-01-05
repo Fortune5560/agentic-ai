@@ -161,7 +161,17 @@
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visi
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('section, .card').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+    });
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -193,6 +203,17 @@
   </script>
 </head>
 <body>
+<nav style="position:sticky;top:0;z-index:50;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);border-bottom:1px solid rgba(148,163,184,0.15);">
+  <div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;">
+    <strong style="letter-spacing:0.04em;">Agentic AI</strong>
+    <div style="display:flex;gap:20px;font-size:0.95rem;">
+      <a href="#start" style="color:#e5e7eb;text-decoration:none;">Start Here</a>
+      <a href="#blueprints" style="color:#e5e7eb;text-decoration:none;">Blueprints</a>
+      <a href="#tools" style="color:#e5e7eb;text-decoration:none;">Tools</a>
+      <a href="#newsletter" style="color:#e5e7eb;text-decoration:none;">Newsletter</a>
+    </div>
+  </div>
+</nav>
 
 <header>
   <h1>Agentic AI</h1>
@@ -202,6 +223,25 @@
   </p>
   <a href="#contact" class="cta">Get Started</a>
 </header>
+
+<section id="start">
+  <h2>Start Here</h2>
+  <p>
+    New to agentic AI? Start with our foundational blueprint below. It explains
+    how autonomous agents actually work in production — with tools, constraints,
+    and human oversight.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <h3>Foundational Blueprint</h3>
+      <p>
+        Learn how we design agentic systems that plan, act, and escalate safely —
+        without breaking production systems.
+      </p>
+      <a href="#blueprints" class="cta">Read the Blueprint</a>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>What We Do</h2>
@@ -275,7 +315,7 @@
   </div>
 </section>
 
-<section>
+<section id="blueprints">
   <h2>Educational Blueprints</h2>
   <p>
     These blueprints break down real-world agentic implementations so you can
@@ -299,7 +339,7 @@
   </div>
 </section>
 
-<section>
+<section id="tools">
   <h2>Affiliate & Education Hub</h2>
   <p>
     Agentic AI is an education-first platform. We teach businesses and builders how to design,
@@ -392,7 +432,24 @@
   </p>
 </section>
 
-<section id="contact">
+<section id="newsletter">
+  <h2>Join the Agentic AI Newsletter</h2>
+  <p>
+    Get new blueprints, tool breakdowns, and practical agent design insights
+    directly in your inbox. No hype. No spam.
+  </p>
+  <form name="newsletter" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="newsletter" />
+    <div style="display:flex;gap:12px;max-width:420px;">
+      <input type="email" name="email" required placeholder="you@domain.com"
+        style="flex:1;padding:14px 16px;border-radius:10px;border:1px solid rgba(148,163,184,0.2);background:#020617;color:#e5e7eb;" />
+      <button type="submit" class="cta">Subscribe</button>
+    </div>
+    <p style="margin-top:10px;font-size:0.85rem;color:#94a3b8;">👋 Found us from X? You’re early.</p>
+  </form>
+</section>
+
+<section id=
   <h2>Work With Us</h2>
   <p>
     Ready to deploy AI that actually does the work? Tell us about your use case
