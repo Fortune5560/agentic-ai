@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta property="og:title" content="Agentic AI — Autonomous AI Agents" />
-<meta property="og:description" content="Learn how autonomous AI agents really work — tools, workflows, ethics, and real-world blueprints." />
-<meta property="og:image" content="https://your-domain.com/path-to-preview-image.png" />
-<meta property="og:url" content="https://your-domain.com/" />
-<meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agentic AI | Autonomous AI That Gets Work Done</title>
   <meta name="description" content="Agentic AI builds autonomous AI agents that perform real tasks for businesses and individuals." />
+
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:title" content="Agentic AI — Agent-Native Systems That Get Work Done" />
+  <meta property="og:description" content="Learn how autonomous AI agents really work: real workflows, tool comparisons, human-in-the-loop design, and production-ready blueprints." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://695c1cfcb07f329f289f25d7--prismatic-twilight-09e881.netlify.app/" />
+  <meta property="og:image" content="/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agentic AI — Agent-Native Systems That Get Work Done" />
+  <meta name="twitter:description" content="Education-first blueprints for building safe, auditable autonomous AI agents." />
+  <meta name="twitter:image" content="/og-image.png" />
   <style>
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #0f172a;
-      background: #f8fafc;
+      color: #e5e7eb;
+      background: radial-gradient(1200px 600px at top, #020617, #000);
       line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease;
     }
     header {
-      background: linear-gradient(135deg, #0f172a, #020617);
+      background: linear-gradient(135deg, #020617, #000);
       color: white;
-      padding: 80px 24px;
+      padding: 100px 24px;
       text-align: center;
     }
     header h1 {
@@ -59,23 +67,101 @@
       margin-top: 40px;
     }
     .card {
-      background: white;
+      background: linear-gradient(180deg, #020617, #020617);
       padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+      border: 1px solid rgba(56,189,248,0.5);
     }
     .card h3 {
       margin-top: 0;
       margin-bottom: 10px;
     }
     footer {
-      background: #020617;
-      color: #cbd5f5;
-      padding: 40px 24px;
+      background: #000;
+      color: #94a3b8;
+      padding: 48px 24px;
       text-align: center;
       font-size: 0.9rem;
     }
+      .cta {
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      color: white;
+      padding: 16px 34px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 20px 40px rgba(37,99,235,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 30px 60px rgba(56,189,248,0.55);
+    }
+
+    section {
+      padding: 90px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 18px;
+      background: linear-gradient(90deg, #e5e7eb, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    table {
+      background: #020617;
+      color: #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+
+    th {
+      background: rgba(2,6,23,0.8);
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: rgba(56,189,248,0.08);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visi
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
