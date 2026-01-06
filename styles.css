@@ -147,4 +147,19 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* Make blueprint cards clearly clickable */
+.blueprint-card {
+  cursor: pointer;
+}
+
+.blueprint-card .cta-link {
+  margin-top: 18px;
+  font-weight: 600;
+  color: #38bdf8;
+  display: inline-block;
+}
+
+.blueprint-card:hover .cta-link {
+  text-decoration: underline;
+}
 
