@@ -227,3 +227,44 @@ footer a:hover {
   from { opacity: 0; transform: translateY(60px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ===== Tools Comparison Section ===== */
+#tools-comparison {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#tools-comparison h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#tools-comparison p {
+  color: var(--text-dim);
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+#tools-comparison .card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+}
+
+#tools-comparison .card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+}
+
+#tools-comparison h3 {
+  color: var(--accent-alt);
+  margin-bottom: 0.6rem;
+}
+
+#tools-comparison strong {
+  color: var(--accent);
+}
