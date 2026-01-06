@@ -349,6 +349,21 @@
 </p>
   © 2026 Agentic AI. All rights reserved.
 </footer>
-
+<script>
+const stars = document.createElement('div');
+stars.id = 'stars';
+document.body.appendChild(stars);
+for (let i = 0; i < 150; i++) {
+  const s = document.createElement('div');
+  s.classList.add('star');
+  const size = Math.random() * 2 + 'px';
+  s.style.width = size;
+  s.style.height = size;
+  s.style.left = Math.random() * 100 + '%';
+  s.style.top = Math.random() * 100 + '%';
+  s.style.animationDuration = 10 + Math.random() * 20 + 's';
+  stars.appendChild(s);
+}
+</script>
 </body>
 </html>
