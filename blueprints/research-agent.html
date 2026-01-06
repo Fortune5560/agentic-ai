@@ -1,70 +1,76 @@
 <!DOCTYPE html>
-Home → Blueprints → Autonomous Ops Agent
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="../styles.css">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Research & Reporting Agent",
-  "description": "A blueprint for building an autonomous research agent with verification and human review.",
-  "author": {
-    "@type": "Organization",
-    "name": "Agentic AI"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Agentic AI"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "../"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blueprints"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Research & Reporting Agent"
-    }
-  ]
-}
-</script>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research & Reporting Agent | Agentic AI Blueprint</title>
   <meta name="description" content="A blueprint for building an agent that performs autonomous research with verification and human review." />
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Schema.org JSON-LD for structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Research & Reporting Agent",
+    "description": "A blueprint for building an autonomous research agent with verification and human review.",
+    "author": {
+      "@type": "Organization",
+      "name": "Agentic AI"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Agentic AI"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "../"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blueprints"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Research & Reporting Agent"
+      }
+    ]
+  }
+  </script>
 </head>
-  <div style="max-width:1100px;margin:24px auto 0;padding:0 24px;font-size:0.9rem;color:#94a3b8;">
-  <a href="../" style="color:#38bdf8;text-decoration:none;">Home</a>
-  <span> → </span>
-  <span>Blueprints</span>
-  <span> → </span>
-  <strong>Research & Reporting Agent</strong>
-</div>
 <body>
-  <nav style="position:sticky;top:0;z-index:50;background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);border-bottom:1px solid rgba(148,163,184,0.15);">
-  <div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;">
-    <strong>Agentic AI</strong>
-    <a href="../" style="color:#e5e7eb;text-decoration:none;">← Back to Home</a>
+  <!-- Navigation -->
+  <nav>
+    <div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;">
+      <strong style="letter-spacing:0.04em;color:#e5e7eb;">Agentic AI</strong>
+      <a href="../" style="color:#e5e7eb;text-decoration:none;">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb Navigation -->
+  <div style="max-width:1100px;margin:24px auto 0;padding:0 24px;font-size:0.9rem;color:#94a3b8;">
+    <a href="../" style="color:#38bdf8;text-decoration:none;">Home</a>
+    <span> → </span>
+    <span>Blueprints</span>
+    <span> → </span>
+    <strong style="color:#00ffff;">Research & Reporting Agent</strong>
   </div>
-</nav>
- <a href="./blueprints/research-agent.html" style="text-decoration:none;color:inherit;">
-  <div class="card">
-    <h3>Blueprint #2: Research & Reporting Agent</h3>
+
+  <!-- Blueprint Content -->
+  <main style="max-width:1100px;margin:50px auto;padding:0 24px;color:#e5e7eb;">
+    <h1 style="text-align:center;color:#00ffff;">Blueprint #2: Research & Reporting Agent</h1>
     <p><strong>Goal:</strong> Produce trusted, executive-ready insights.</p>
     <ul>
       <li>Autonomous source discovery</li>
@@ -73,60 +79,58 @@ Home → Blueprints → Autonomous Ops Agent
       <li>Human review before delivery</li>
     </ul>
     <p><strong>Outcome:</strong> Faster, higher-quality research.</p>
+
+    <!-- Problem Section -->
+    <h2>Problem</h2>
+    <p>
+      Research is time-intensive, inconsistent, and difficult to verify at scale. Autonomous research without validation leads to hallucinations and low trust.
+    </p>
+
+    <!-- Goal Section -->
+    <h2>Goal</h2>
+    <p>
+      Build an agent that gathers information autonomously while enforcing verification, transparency, and human review.
+    </p>
+
+    <!-- System Design Section -->
+    <h2>System Design</h2>
+    <ul>
+      <li>Autonomous source discovery</li>
+      <li>Credibility filtering and ranking</li>
+      <li>Multi-step reasoning and synthesis</li>
+      <li>Explicit verification loops</li>
+    </ul>
+
+    <!-- Tooling Section -->
+    <h2>Tooling</h2>
+    <ul>
+      <li><strong>Retrieval:</strong> Search APIs, vector databases</li>
+      <li><strong>Reasoning:</strong> LLM with structured prompts</li>
+      <li><strong>Output:</strong> Reports, summaries, citations</li>
+    </ul>
+
+    <!-- Human-in-the-Loop Section -->
+    <h2>Human-in-the-Loop</h2>
+    <p>
+      Final reports are reviewed and approved by a human before distribution or publication.
+    </p>
+
+    <!-- Outcome Section -->
+    <h2>Outcome</h2>
+    <p>
+      High-quality, trustworthy research delivered faster, with full transparency into sources and reasoning.
+    </p>
+  </main>
+
+  <!-- Previous and Next Blueprint Navigation -->
+  <div style="max-width:1100px;margin:40px auto 40px;padding:0 24px;display:flex;justify-content:space-between;">
+    <a href="ops-agent.html" class="cta">← Previous</a>
+    <a href="productivity-agent.html" class="cta">Next →</a>
   </div>
-</a>
-  <h2>Problem</h2>
-  <p>
-    Research is time-intensive, inconsistent, and difficult to verify at scale.
-    Autonomous research without validation leads to hallucinations and low trust.
-  </p>
 
-  <h2>Goal</h2>
-  <p>
-    Build an agent that gathers information autonomously while enforcing
-    verification, transparency, and human review.
-  </p>
-
-  <h2>System Design</h2>
-  <ul>
-    <li>Autonomous source discovery</li>
-    <li>Credibility filtering and ranking</li>
-    <li>Multi-step reasoning and synthesis</li>
-    <li>Explicit verification loops</li>
-  </ul>
-
-  <h2>Tooling</h2>
-  <ul>
-    <li><strong>Retrieval:</strong> Search APIs, vector databases</li>
-    <li><strong>Reasoning:</strong> LLM with structured prompts</li>
-    <li><strong>Output:</strong> Reports, summaries, citations</li>
-  </ul>
-
-  <h2>Human-in-the-Loop</h2>
-  <p>
-    Final reports are reviewed and approved by a human
-    before distribution or publication.
-  </p>
-
-  <h2>Outcome</h2>
-  <p>
-    High-quality, trustworthy research delivered faster,
-    with full transparency into sources and reasoning.
-  </p>
-  <div style="max-width:1100px;margin:80px auto 40px;padding:0 24px;display:flex;justify-content:space-between;">
-  <a href="ops-agent.html" class="cta">← Previous</a>
-  <a href="productivity-agent.html" class="cta">Next →</a>
-</div>
+  <!-- Footer -->
+  <footer style="background-color: #020617;color: #e5e7eb;padding:20px 0;text-align:center;">
+    <p>© 2026 Agentic AI. All rights reserved.</p>
+  </footer>
 </body>
 </html>
-← Previous | Next →
-
-
-
-
-
-
-
-
-
-
