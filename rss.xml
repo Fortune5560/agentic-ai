@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Agentic AI — Blueprints</title>
+    <link>https://fortune5560.github.io/agentic-ai/</link>
+    <description>
+      Practical blueprints for building safe, auditable, agentic AI systems.
+    </description>
+    <language>en-us</language>
+
+    <item>
+      <title>Blueprint #1: Autonomous Ops Agent</title>
+      <link>https://fortune5560.github.io/agentic-ai/blueprints/ops-agent.html</link>
+      <guid>ops-agent</guid>
+      <description>
+        A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards.
+      </description>
+    </item>
+
+    <item>
+      <title>Blueprint #2: Research & Reporting Agent</title>
+      <link>https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html</link>
+      <guid>research-agent</guid>
+      <description>
+        A blueprint for autonomous research with verification, credibility filtering, and human review.
+      </description>
+    </item>
+
+    <item>
+      <title>Blueprint #3: Personal Productivity Agent</title>
+      <link>https://fortune5560.github.io/agentic-ai/blueprints/productivity-agent.html</link>
+      <guid>productivity-agent</guid>
+      <description>
+        A human-centric agent blueprint focused on task execution without loss of control.
+      </description>
+    </item>
+
+  </channel>
+</rss>
