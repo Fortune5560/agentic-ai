@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Autonomous Ops Agent | Agentic AI Blueprint</title>
+  <meta name="description" content="A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards." />
+</head>
+<body>
+  <h1>Blueprint #1: Autonomous Ops Agent</h1>
+
+  <h2>Problem</h2>
+  <p>
+    Manual operational workflows introduce delays, alert fatigue, and human error.
+    Fully autonomous automation without oversight introduces unacceptable risk.
+  </p>
+
+  <h2>Goal</h2>
+  <p>
+    Design an agentic system that responds to operational events autonomously,
+    while preserving safety, auditability, and human control.
+  </p>
+
+  <h2>System Design</h2>
+  <ul>
+    <li>Event-driven triggers (alerts, logs, system signals)</li>
+    <li>Deterministic orchestration layer</li>
+    <li>LLM-based planning and decision support</li>
+    <li>Explicit human-in-the-loop approval gates</li>
+  </ul>
+
+  <h2>Tooling</h2>
+  <ul>
+    <li><strong>Orchestration:</strong> n8n</li>
+    <li><strong>Reasoning:</strong> LLM planner</li>
+    <li><strong>Interfaces:</strong> APIs, dashboards, notifications</li>
+  </ul>
+
+  <h2>Human-in-the-Loop</h2>
+  <p>
+    High-impact actions (deployments, escalations, system changes)
+    require explicit human approval before execution.
+  </p>
+
+  <h2>Outcome</h2>
+  <p>
+    Faster response times, reduced cognitive load on operators,
+    and predictable, auditable automation.
+  </p>
+</body>
+</html>
