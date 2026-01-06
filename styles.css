@@ -1,165 +1,229 @@
-/* ===== Base ===== */
+/* ==============================
+   Agentic AI — Enhanced Styles
+   ============================== */
+
+/* Base Theme */
+:root {
+  --accent: #00ffff;
+  --accent-alt: #7b61ff;
+  --bg-start: #0b0b1a;
+  --bg-end: #000010;
+  --text: #e5e7eb;
+  --text-dim: #94a3b8;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-glow: rgba(0, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  background: radial-gradient(circle at top, var(--bg-start) 0%, var(--bg-end) 100%);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #e5e7eb;
-  background: radial-gradient(1200px 600px at top, #020617, #000);
-  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
 }
 
-a {
-  color: #38bdf8;
+/* ==============================
+   Starfield Background
+   ============================== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  pointer-events: none;
 }
 
-section {
-  padding: 90px 24px;
-  max-width: 1100px;
-  margin: 0 auto;
+@keyframes starfield {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0.3; }
 }
 
-/* ===== Typography ===== */
-h1 {
-  font-size: 3rem;
-  margin-bottom: 16px;
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: starfield linear infinite;
 }
 
-h2 {
-  font-size: 2.4rem;
-  margin-bottom: 18px;
-  background: linear-gradient(90deg, #e5e7eb, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* Use JS to generate stars (optional in your HTML’s script section) */
 
-h3 {
-  margin-top: 0;
-}
-
-/* ===== Navigation ===== */
+/* ==============================
+   Navigation
+   ============================== */
 nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(148,163,184,0.15);
+  background: rgba(0, 0, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-glow);
+  transition: background 0.4s ease;
 }
 
-nav .nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 14px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* ===== Header ===== */
+nav a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+/* ==============================
+   Hero Section
+   ============================== */
 header {
-  background: linear-gradient(135deg, #020617, #000);
-  color: white;
-  padding: 100px 24px;
   text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 40, 0.6), transparent);
+  animation: fadeIn 1.5s ease-out;
 }
 
-/* ===== Cards ===== */
+header h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glow 3s infinite alternate;
+}
+
+header p {
+  max-width: 700px;
+  margin: 1rem auto 2rem;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+header .cta {
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  color: #000010;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+header .cta:hover {
+  box-shadow: 0 0 20px var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   Section Styling
+   ============================== */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease forwards;
+}
+
+section h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+/* ==============================
+   Cards & Grid
+   ============================== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: #020617;
-  padding: 28px;
-  border-radius: 18px;
-  border: 1px solid rgba(148,163,184,0.15);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  background: var(--card-bg);
+  border: 1px solid var(--border-glow);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(4px);
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-  border: 1px solid rgba(56,189,248,0.5);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
 }
 
-/* ===== CTA ===== */
+/* ==============================
+   Buttons & Forms
+   ============================== */
+button,
 .cta {
-  background: linear-gradient(135deg, #2563eb, #38bdf8);
-  color: white;
-  padding: 16px 34px;
-  border-radius: 999px;
-  text-decoration: none;
+  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+  border: none;
+  color: #000010;
   font-weight: 600;
-  display: inline-block;
-  box-shadow: 0 20px 40px rgba(37,99,235,0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.cta:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 30px 60px rgba(56,189,248,0.55);
-}
-
-/* ===== Tables ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #020617;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-th, td {
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(148,163,184,0.15);
-}
-
-th {
-  background: rgba(2,6,23,0.8);
-  font-weight: 600;
-}
-
-tr:hover {
-  background: rgba(56,189,248,0.08);
-}
-
-/* ===== Footer ===== */
-footer {
-  background: #000;
-  color: #94a3b8;
-  padding: 48px 24px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* ===== Animations ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Make blueprint cards clearly clickable */
-.blueprint-card {
   cursor: pointer;
+  border-radius: 8px;
+  padding: 0.9rem 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.blueprint-card .cta-link {
-  margin-top: 18px;
-  font-weight: 600;
-  color: #38bdf8;
-  display: inline-block;
+button:hover,
+.cta:hover {
+  box-shadow: 0 0 20px var(--accent);
+  transform: scale(1.03);
 }
 
-.blueprint-card:hover .cta-link {
-  text-decoration: underline;
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border-glow);
+  background: rgba(0, 0, 20, 0.6);
+  color: var(--text-dim);
 }
 
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-shadow: 0 0 8px var(--accent);
+}
+
+/* ==============================
+   Animations
+   ============================== */
+@keyframes glow {
+  from { text-shadow: 0 0 20px var(--accent); }
+  to { text-shadow: 0 0 40px var(--accent-alt); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
