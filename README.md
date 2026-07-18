@@ -59,11 +59,10 @@ branch redeploys automatically.
 
 ## Customization checklist
 
-- **Newsletter email:** the "Subscribe by Email" button in `index.html` uses a
-  `mailto:` link with the placeholder `hello@example.com` — replace it with
-  your real inbox (search for `TODO` in `index.html`). To collect subscribers
+- **Newsletter email:** the "Subscribe by Email" button in `index.html` is a
+  `mailto:` link to `fortuneowivri@gmail.com`. To collect subscribers
   properly later, swap it for a form backend that works on static hosting
-  (Formspree, Buttondown, etc.).
+  (Formspree, Buttondown, etc.) and update this note.
 - **Social image:** `og-image.png` is referenced from every page with absolute
   URLs. Regenerate/replace it and keep the `og:image:width`/`height` meta tags
   in sync with the real dimensions.
