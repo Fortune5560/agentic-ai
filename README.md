@@ -6,7 +6,7 @@ governed, and deployed.
 
 **Live site:** <https://fortune5560.github.io/agentic-ai/>
 
-No build step, no dependencies — plain HTML, CSS, and a sprinkle of vanilla JS.
+No build step, no dependencies — plain HTML, CSS, and progressive-enhancement JS.
 
 ## Project structure
 
@@ -14,8 +14,12 @@ No build step, no dependencies — plain HTML, CSS, and a sprinkle of vanilla JS
 ├── index.html              # Landing page
 ├── 404.html                # Custom GitHub Pages 404
 ├── styles.css              # All site styles (design tokens in :root)
-├── favicon.svg             # Site icon
+├── site.js                 # Starfield, scroll-reveal, back-to-top (optional enhancement)
+├── favicon.svg             # Site icon (vector source)
+├── apple-touch-icon.png    # 180×180 iOS home-screen icon
+├── icon-192.png/icon-512.png # Web manifest icons
 ├── og-image.png            # Social preview image (1424×752)
+├── site.webmanifest        # PWA/install metadata
 ├── rss.xml                 # RSS feed for the blueprints
 ├── robots.txt              # Crawler rules + sitemap reference
 ├── sitemap.xml             # Sitemap for search engines
@@ -39,6 +43,15 @@ Opening `index.html` directly in a browser also works, except the 404 page,
 which uses root-absolute paths (`/agentic-ai/…`) because GitHub Pages can serve
 it from any nested URL.
 
+## Design system
+
+- Tokens live in `:root` at the top of `styles.css` (colors, widths, font stack).
+- Motion: the starfield, scroll-reveal, and smooth scrolling all honor
+  `prefers-reduced-motion`; keep it that way when adding animation.
+- `site.js` is pure progressive enhancement: with JS disabled, every page is
+  still fully readable (hidden-then-revealed styles are gated behind `html.js`).
+- Blueprints print cleanly — a dedicated `@media print` sheet strips chrome.
+
 ## Deployment
 
 Hosted on **GitHub Pages** from the repository root. Pushing to the default
@@ -54,12 +67,13 @@ branch redeploys automatically.
 - **Social image:** `og-image.png` is referenced from every page with absolute
   URLs. Regenerate/replace it and keep the `og:image:width`/`height` meta tags
   in sync with the real dimensions.
-- **RSS:** update `rss.xml` (`<lastBuildDate>`, new `<item>` entries) whenever a
-  new blueprint is published, and add the URL to `sitemap.xml`.
+- **Icons:** `favicon.svg` is the vector source; the PNG icons were rendered
+  from it. Regenerate the PNGs if you change the mark.
+- **Publishing a new blueprint:** add a card on `index.html` and
+  `blueprints/index.html`, an `<item>` in `rss.xml` (bump `<lastBuildDate>`),
+  the URL in `sitemap.xml`, and update prev/next links on neighboring blueprints.
 
 ## Housekeeping
 
 - Line endings are normalized to LF via `.gitattributes`.
 - All pages share `styles.css`; avoid inline styles — extend the stylesheet.
-- The decorative starfield respects `prefers-reduced-motion`; keep it that way
-  if you add more animation.

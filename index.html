@@ -6,7 +6,10 @@
   <title>Agentic AI | Autonomous AI That Gets Work Done</title>
   <meta name="description" content="Agentic AI builds autonomous AI agents that perform real tasks for businesses and individuals." />
   <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/" />
+  <meta name="theme-color" content="#000010" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="manifest" href="./site.webmanifest" />
   <link rel="alternate" type="application/rss+xml" title="Agentic AI Blueprints" href="./rss.xml" />
 
   <!-- Fonts -->
@@ -15,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./styles.css" />
+  <script src="./site.js" defer></script>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Agentic AI | Autonomous AI That Gets Work Done" />
@@ -57,7 +61,7 @@
   </script>
 </head>
 
-<body>
+<body data-stars>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Navigation -->
@@ -224,26 +228,6 @@
     <p>© 2026 Agentic AI. All rights reserved.</p>
   </footer>
 
-  <!-- Decorative starfield (hidden from assistive tech and reduced-motion users) -->
-  <script>
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var stars = document.createElement('div');
-      stars.id = 'stars';
-      stars.setAttribute('aria-hidden', 'true');
-      document.body.appendChild(stars);
-      for (var i = 0; i < 150; i++) {
-        var s = document.createElement('div');
-        s.classList.add('star');
-        var size = Math.random() * 2 + 'px';
-        s.style.width = size;
-        s.style.height = size;
-        s.style.left = Math.random() * 100 + '%';
-        s.style.top = Math.random() * 100 + '%';
-        s.style.animationDuration = 10 + Math.random() * 20 + 's';
-        stars.appendChild(s);
-      }
-    })();
-  </script>
+  <!-- Decorative starfield, scroll-reveal, and back-to-top are handled by site.js -->
 </body>
 </html>
