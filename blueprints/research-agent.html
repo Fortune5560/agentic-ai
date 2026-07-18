@@ -3,9 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research & Reporting Agent | Agentic AI Blueprint</title>
+  <title>Research &amp; Reporting Agent | Agentic AI Blueprint</title>
   <meta name="description" content="A blueprint for building an agent that performs autonomous research with verification and human review." />
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html" />
+  <meta name="theme-color" content="#000010" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+  <link rel="alternate" type="application/rss+xml" title="Agentic AI Blueprints" href="../rss.xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../site.js" defer></script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Research &amp; Reporting Agent | Agentic AI Blueprint" />
+  <meta property="og:description" content="A blueprint for autonomous research with verification, credibility filtering, and human review." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html" />
+  <meta property="og:site_name" content="Agentic AI" />
+  <meta property="og:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Research &amp; Reporting Agent | Agentic AI Blueprint" />
+  <meta name="twitter:description" content="A blueprint for autonomous research with verification, credibility filtering, and human review." />
+  <meta name="twitter:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
+  <meta name="twitter:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
 
   <!-- Schema.org JSON-LD for structured data -->
   <script type="application/ld+json">
@@ -14,13 +45,18 @@
     "@type": "Article",
     "headline": "Research & Reporting Agent",
     "description": "A blueprint for building an autonomous research agent with verification and human review.",
+    "datePublished": "2026-01-06",
+    "dateModified": "2026-07-18",
+    "mainEntityOfPage": "https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html",
     "author": {
       "@type": "Organization",
-      "name": "Agentic AI"
+      "name": "Agentic AI",
+      "url": "https://fortune5560.github.io/agentic-ai/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Agentic AI"
+      "name": "Agentic AI",
+      "url": "https://fortune5560.github.io/agentic-ai/"
     }
   }
   </script>
@@ -34,12 +70,13 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "../"
+        "item": "https://fortune5560.github.io/agentic-ai/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Blueprints"
+        "name": "Blueprints",
+        "item": "https://fortune5560.github.io/agentic-ai/blueprints/"
       },
       {
         "@type": "ListItem",
@@ -51,85 +88,90 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Navigation -->
-  <nav>
-    <div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;">
-      <strong style="letter-spacing:0.04em;color:#e5e7eb;">Agentic AI</strong>
-      <a href="../" style="color:#e5e7eb;text-decoration:none;">← Back to Home</a>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand">Agentic AI</strong>
+      <div class="nav-links">
+        <a href="../">← Back to Home</a>
+      </div>
     </div>
   </nav>
 
   <!-- Breadcrumb Navigation -->
-  <div style="max-width:1100px;margin:24px auto 0;padding:0 24px;font-size:0.9rem;color:#94a3b8;">
-    <a href="../" style="color:#38bdf8;text-decoration:none;">Home</a>
-    <span> → </span>
-    <span>Blueprints</span>
-    <span> → </span>
-    <strong style="color:#00ffff;">Research & Reporting Agent</strong>
-  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Blueprints</a></li>
+      <li aria-current="page">Research &amp; Reporting Agent</li>
+    </ol>
+  </nav>
 
   <!-- Blueprint Content -->
-  <main style="max-width:1100px;margin:50px auto;padding:0 24px;color:#e5e7eb;">
-    <h1 style="text-align:center;color:#00ffff;">Blueprint #2: Research & Reporting Agent</h1>
-    <p><strong>Goal:</strong> Produce trusted, executive-ready insights.</p>
-    <ul>
-      <li>Autonomous source discovery</li>
-      <li>Credibility filtering</li>
-      <li>Verification loops</li>
-      <li>Human review before delivery</li>
-    </ul>
-    <p><strong>Outcome:</strong> Faster, higher-quality research.</p>
+  <main id="main">
+    <article class="blueprint">
+      <h1>Blueprint #2: Research &amp; Reporting Agent</h1>
+      <p class="lede">Produce trusted, executive-ready insights with autonomous research that never sacrifices verification.</p>
+      <p class="updated">Last updated <time datetime="2026-07-18">July 18, 2026</time>.</p>
 
-    <!-- Problem Section -->
-    <h2>Problem</h2>
-    <p>
-      Research is time-intensive, inconsistent, and difficult to verify at scale. Autonomous research without validation leads to hallucinations and low trust.
-    </p>
+      <!-- Problem Section -->
+      <h2>Problem</h2>
+      <p>
+        Research is time-intensive, inconsistent, and difficult to verify at scale. Autonomous research without validation leads to hallucinations and low trust.
+      </p>
 
-    <!-- Goal Section -->
-    <h2>Goal</h2>
-    <p>
-      Build an agent that gathers information autonomously while enforcing verification, transparency, and human review.
-    </p>
+      <!-- Goal Section -->
+      <h2>Goal</h2>
+      <p>
+        Build an agent that gathers information autonomously while enforcing verification, transparency, and human review.
+      </p>
 
-    <!-- System Design Section -->
-    <h2>System Design</h2>
-    <ul>
-      <li>Autonomous source discovery</li>
-      <li>Credibility filtering and ranking</li>
-      <li>Multi-step reasoning and synthesis</li>
-      <li>Explicit verification loops</li>
-    </ul>
+      <!-- System Design Section -->
+      <h2>System Design</h2>
+      <ul>
+        <li>Autonomous source discovery</li>
+        <li>Credibility filtering and ranking</li>
+        <li>Multi-step reasoning and synthesis</li>
+        <li>Explicit verification loops</li>
+      </ul>
 
-    <!-- Tooling Section -->
-    <h2>Tooling</h2>
-    <ul>
-      <li><strong>Retrieval:</strong> Search APIs, vector databases</li>
-      <li><strong>Reasoning:</strong> LLM with structured prompts</li>
-      <li><strong>Output:</strong> Reports, summaries, citations</li>
-    </ul>
+      <!-- Tooling Section -->
+      <h2>Tooling</h2>
+      <ul>
+        <li><strong>Retrieval:</strong> Search APIs, vector databases</li>
+        <li><strong>Reasoning:</strong> LLM with structured prompts</li>
+        <li><strong>Output:</strong> Reports, summaries, citations</li>
+      </ul>
 
-    <!-- Human-in-the-Loop Section -->
-    <h2>Human-in-the-Loop</h2>
-    <p>
-      Final reports are reviewed and approved by a human before distribution or publication.
-    </p>
+      <!-- Human-in-the-Loop Section -->
+      <h2>Human-in-the-Loop</h2>
+      <p>
+        Final reports are reviewed and approved by a human before distribution or publication.
+      </p>
 
-    <!-- Outcome Section -->
-    <h2>Outcome</h2>
-    <p>
-      High-quality, trustworthy research delivered faster, with full transparency into sources and reasoning.
-    </p>
+      <!-- Outcome Section -->
+      <h2>Outcome</h2>
+      <p>
+        High-quality, trustworthy research delivered faster, with full transparency into sources and reasoning.
+      </p>
+    </article>
   </main>
 
   <!-- Previous and Next Blueprint Navigation -->
-  <div style="max-width:1100px;margin:40px auto 40px;padding:0 24px;display:flex;justify-content:space-between;">
-    <a href="ops-agent.html" class="cta">← Previous</a>
-    <a href="productivity-agent.html" class="cta">Next →</a>
+  <div class="bp-nav">
+    <a href="./ops-agent.html" class="cta">← Previous: Autonomous Ops Agent</a>
+    <a href="./productivity-agent.html" class="cta">Next: Personal Productivity Agent →</a>
   </div>
 
   <!-- Footer -->
-  <footer style="background-color: #020617;color: #e5e7eb;padding:20px 0;text-align:center;">
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Blueprints</a></li>
+      <li><a href="../rss.xml">RSS</a></li>
+    </ul>
     <p>© 2026 Agentic AI. All rights reserved.</p>
   </footer>
 </body>
