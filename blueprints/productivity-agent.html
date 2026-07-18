@@ -5,8 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Productivity Agent | Agentic AI Blueprint</title>
   <meta name="description" content="A human-centric blueprint for building a personal productivity agent with safe autonomy." />
-  <link rel="stylesheet" href="../styles.css">
-  
+  <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/blueprints/productivity-agent.html" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="Agentic AI Blueprints" href="../rss.xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Personal Productivity Agent | Agentic AI Blueprint" />
+  <meta property="og:description" content="A human-centric blueprint for building a personal productivity agent with safe autonomy." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fortune5560.github.io/agentic-ai/blueprints/productivity-agent.html" />
+  <meta property="og:site_name" content="Agentic AI" />
+  <meta property="og:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Personal Productivity Agent | Agentic AI Blueprint" />
+  <meta name="twitter:description" content="A human-centric blueprint for building a personal productivity agent with safe autonomy." />
+  <meta name="twitter:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
+  <meta name="twitter:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+
   <!-- Schema.org JSON-LD for structured data -->
   <script type="application/ld+json">
   {
@@ -14,17 +41,21 @@
     "@type": "Article",
     "headline": "Personal Productivity Agent",
     "description": "A human-centric blueprint for building a personal productivity agent with safe autonomy.",
+    "datePublished": "2026-01-06",
+    "mainEntityOfPage": "https://fortune5560.github.io/agentic-ai/blueprints/productivity-agent.html",
     "author": {
       "@type": "Organization",
-      "name": "Agentic AI"
+      "name": "Agentic AI",
+      "url": "https://fortune5560.github.io/agentic-ai/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Agentic AI"
+      "name": "Agentic AI",
+      "url": "https://fortune5560.github.io/agentic-ai/"
     }
   }
   </script>
-  
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,12 +65,13 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "../"
+        "item": "https://fortune5560.github.io/agentic-ai/"
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Blueprints"
+        "name": "Blueprints",
+        "item": "https://fortune5560.github.io/agentic-ai/blueprints/"
       },
       {
         "@type": "ListItem",
@@ -51,86 +83,90 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Navigation -->
-  <nav>
-    <div style="max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;">
-      <strong style="letter-spacing:0.04em;color:#e5e7eb;">Agentic AI</strong>
-      <a href="../" style="color:#e5e7eb;text-decoration:none;">← Back to Home</a>
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand">Agentic AI</strong>
+      <div class="nav-links">
+        <a href="../">← Back to Home</a>
+      </div>
     </div>
   </nav>
 
   <!-- Breadcrumb Navigation -->
-  <div style="max-width:1100px;margin:24px auto 0;padding:0 24px;font-size:0.9rem;color:#94a3b8;">
-    <a href="../" style="color:#38bdf8;text-decoration:none;">Home</a>
-    <span> → </span>
-    <span>Blueprints</span>
-    <span> → </span>
-    <strong style="color:#00ffff;">Personal Productivity Agent</strong>
-  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Blueprints</a></li>
+      <li aria-current="page">Personal Productivity Agent</li>
+    </ol>
+  </nav>
 
   <!-- Blueprint Content -->
-  <main style="max-width:1100px;margin:50px auto;padding:0 24px;color:#e5e7eb;">
-    <h1 style="text-align:center;color:#00ffff;">Blueprint #3: Personal Productivity Agent</h1>
-    <p><strong>Goal:</strong> Help humans execute work without losing control.</p>
-    <ul>
-      <li>Task intake & prioritization</li>
-      <li>Planning assistance</li>
-      <li>Reminders & follow-ups</li>
-      <li>Explicit user confirmation</li>
-    </ul>
-    <p><strong>Outcome:</strong> Less cognitive load, higher completion.</p>
+  <main id="main">
+    <article class="blueprint">
+      <h1>Blueprint #3: Personal Productivity Agent</h1>
+      <p class="lede">Help humans execute work without ever losing control of it.</p>
 
-    <!-- Problem Section -->
-    <h2>Problem</h2>
-    <p>
-      Knowledge workers struggle with task overload, context switching, and follow-through.
-    </p>
+      <!-- Problem Section -->
+      <h2>Problem</h2>
+      <p>
+        Knowledge workers struggle with task overload, context switching, and follow-through.
+      </p>
 
-    <!-- Goal Section -->
-    <h2>Goal</h2>
-    <p>
-      Design an agent that helps users plan, prioritize, and execute tasks without removing human agency.
-    </p>
+      <!-- Goal Section -->
+      <h2>Goal</h2>
+      <p>
+        Design an agent that helps users plan, prioritize, and execute tasks without removing human agency.
+      </p>
 
-    <!-- System Design Section -->
-    <h2>System Design</h2>
-    <ul>
-      <li>Task intake from email, notes, or chat</li>
-      <li>Priority scoring and planning</li>
-      <li>Execution assistance and reminders</li>
-      <li>Continuous state visibility</li>
-    </ul>
+      <!-- System Design Section -->
+      <h2>System Design</h2>
+      <ul>
+        <li>Task intake from email, notes, or chat</li>
+        <li>Priority scoring and planning</li>
+        <li>Execution assistance and reminders</li>
+        <li>Continuous state visibility</li>
+      </ul>
 
-    <!-- Tooling Section -->
-    <h2>Tooling</h2>
-    <ul>
-      <li><strong>Planning:</strong> LLM task planner</li>
-      <li><strong>Integration:</strong> Calendar and task APIs</li>
-      <li><strong>Notifications:</strong> Email, chat, mobile</li>
-    </ul>
+      <!-- Tooling Section -->
+      <h2>Tooling</h2>
+      <ul>
+        <li><strong>Planning:</strong> LLM task planner</li>
+        <li><strong>Integration:</strong> Calendar and task APIs</li>
+        <li><strong>Notifications:</strong> Email, chat, mobile</li>
+      </ul>
 
-    <!-- Human-in-the-Loop Section -->
-    <h2>Human-in-the-Loop</h2>
-    <p>
-      The agent never schedules, sends, or commits on behalf of the user without explicit confirmation.
-    </p>
+      <!-- Human-in-the-Loop Section -->
+      <h2>Human-in-the-Loop</h2>
+      <p>
+        The agent never schedules, sends, or commits on behalf of the user without explicit confirmation.
+      </p>
 
-    <!-- Outcome Section -->
-    <h2>Outcome</h2>
-    <p>
-      Reduced cognitive load, higher task completion rates, and trust-preserving automation.
-    </p>
+      <!-- Outcome Section -->
+      <h2>Outcome</h2>
+      <p>
+        Reduced cognitive load, higher task completion rates, and trust-preserving automation.
+      </p>
+    </article>
   </main>
 
   <!-- Previous Blueprint Navigation -->
-  <div style="max-width:1100px;margin:40px auto 40px;padding:0 24px;display:flex;justify-content:flex-start;">
-    <a href="ops-agent.html" class="cta">← Previous Blueprint</a>
+  <div class="bp-nav">
+    <a href="./research-agent.html" class="cta">← Previous: Research &amp; Reporting Agent</a>
+    <a href="./" class="cta">All Blueprints →</a>
   </div>
 
   <!-- Footer -->
-  <footer style="background-color: #020617;color: #e5e7eb;padding:20px 0;text-align:center;">
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Blueprints</a></li>
+      <li><a href="../rss.xml">RSS</a></li>
+    </ul>
     <p>© 2026 Agentic AI. All rights reserved.</p>
   </footer>
 </body>
 </html>
-

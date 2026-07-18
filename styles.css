@@ -1,17 +1,29 @@
 /* ==============================
-   Agentic AI — Enhanced Styles
+   Agentic AI — Site Styles
    ============================== */
 
-/* Base Theme */
+/* Design tokens */
 :root {
   --accent: #00ffff;
   --accent-alt: #7b61ff;
+  --link: #38bdf8;
   --bg-start: #0b0b1a;
   --bg-end: #000010;
+  --surface: #020617;
   --text: #e5e7eb;
   --text-dim: #94a3b8;
   --card-bg: rgba(255, 255, 255, 0.05);
   --border-glow: rgba(0, 255, 255, 0.1);
+  --border-glow-strong: rgba(0, 255, 255, 0.3);
+  --max-width: 1100px;
+  --article-width: 820px;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -19,43 +31,70 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top, var(--bg-start) 0%, var(--bg-end) 100%);
+  background: radial-gradient(circle at top, var(--bg-start) 0%, var(--bg-end) 100%) fixed;
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font);
+  line-height: 1.6;
   margin: 0;
   overflow-x: hidden;
-  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ==============================
-   Starfield Background
+   Accessibility helpers
    ============================== */
-body::before {
-  content: "";
-  position: fixed;
+.skip-link {
+  position: absolute;
+  left: -9999px;
   top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--bg-end);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ==============================
+   Starfield background
+   (populated by JS, purely decorative)
+   ============================== */
+#stars {
+  position: fixed;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
   pointer-events: none;
 }
 
 @keyframes starfield {
   from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-100vh); opacity: 0.3; }
+  to   { transform: translateY(-100vh); opacity: 0.3; }
 }
 
 .star {
   position: absolute;
-  background: white;
+  background: #fff;
   border-radius: 50%;
   opacity: 0.7;
   animation: starfield linear infinite;
 }
-
-/* Use JS to generate stars (optional in your HTML’s script section) */
 
 /* ==============================
    Navigation
@@ -66,8 +105,32 @@ nav {
   z-index: 50;
   background: rgba(0, 0, 20, 0.7);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-glow);
   transition: background 0.4s ease;
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -82,24 +145,33 @@ nav a:hover {
 }
 
 /* ==============================
-   Hero Section
+   Hero (home)
    ============================== */
-header {
+header.hero {
   text-align: center;
   padding: 6rem 2rem 4rem;
   background: linear-gradient(to bottom, rgba(0, 0, 40, 0.6), transparent);
   animation: fadeIn 1.5s ease-out;
 }
 
-header h1 {
-  font-size: 3rem;
+header.hero h1 {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin: 0 0 1rem;
   background: linear-gradient(90deg, var(--accent), var(--accent-alt));
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   animation: glow 3s infinite alternate;
 }
 
-header p {
+@supports not (background-clip: text) {
+  header.hero h1 {
+    background: none;
+    color: var(--accent);
+  }
+}
+
+header.hero p {
   max-width: 700px;
   margin: 1rem auto 2rem;
   color: var(--text-dim);
@@ -107,24 +179,64 @@ header p {
   line-height: 1.6;
 }
 
-header .cta {
+.hero-accent {
+  display: block;
+  margin-top: 1.25rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+.cta,
+button.cta {
+  display: inline-block;
   background: linear-gradient(90deg, var(--accent), var(--accent-alt));
-  color: #000010;
-  padding: 1rem 2rem;
-  border-radius: 40px;
-  text-decoration: none;
+  border: none;
+  color: var(--bg-end);
+  font-family: inherit;
+  font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 0.9rem 1.5rem;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-header .cta:hover {
+header.hero .cta {
+  border-radius: 40px;
+  padding: 1rem 2rem;
+}
+
+.cta:hover {
   box-shadow: 0 0 20px var(--accent);
   transform: translateY(-2px);
 }
 
+.cta-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ==============================
-   Section Styling
+   Layout & sections
    ============================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.article-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.text-left {
+  text-align: left;
+}
+
 section {
   padding: 4rem 2rem;
   text-align: center;
@@ -137,21 +249,29 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-section p {
+section > p,
+section .container > p {
   color: var(--text-dim);
   max-width: 700px;
   margin: 0 auto 2rem;
   line-height: 1.7;
 }
 
+.fine-print {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
 /* ==============================
-   Cards & Grid
+   Cards & grid
    ============================== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
+  max-width: var(--max-width);
 }
 
 .card {
@@ -162,32 +282,165 @@ section p {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
   transition: all 0.4s ease;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 25px var(--border-glow-strong);
+}
+
+.card h3 {
+  margin-top: 0;
+  transition: color 0.3s ease;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Clickable card */
+a.card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.card:hover h3 {
+  color: var(--accent);
+}
+
+.card-eyebrow {
+  margin: 0 0 0.4rem;
+  color: var(--accent-alt);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* ==============================
-   Buttons & Forms
+   Featured / lists
    ============================== */
-button,
-.cta {
-  background: linear-gradient(90deg, var(--accent), var(--accent-alt));
-  border: none;
-  color: #000010;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 0.9rem 1.5rem;
-  transition: all 0.3s ease;
+.article-narrow ul {
+  padding-left: 1.25rem;
 }
 
-button:hover,
-.cta:hover {
-  box-shadow: 0 0 20px var(--accent);
-  transform: scale(1.03);
+.article-narrow li {
+  margin: 0.4rem 0;
+}
+
+/* ==============================
+   Tools comparison
+   ============================== */
+#tools-comparison h3 {
+  color: var(--accent-alt);
+  margin-bottom: 0.6rem;
+}
+
+#tools-comparison strong {
+  color: var(--accent);
+}
+
+/* ==============================
+   Breadcrumbs (blueprint pages)
+   ============================== */
+.breadcrumb {
+  max-width: var(--max-width);
+  margin: 24px auto 0;
+  padding: 0 24px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li + li::before {
+  content: "\2192"; /* → */
+  margin-right: 0.5rem;
+  color: var(--text-dim);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ==============================
+   Blueprint article pages
+   ============================== */
+.blueprint {
+  max-width: var(--article-width);
+  margin: 50px auto;
+  padding: 0 24px;
+}
+
+.blueprint h1 {
+  text-align: center;
+  color: var(--accent);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-top: 0;
+}
+
+.blueprint .lede {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+.blueprint h2 {
+  color: var(--accent);
+  margin-top: 2.5rem;
+}
+
+.blueprint p,
+.blueprint li {
+  color: var(--text);
+}
+
+.blueprint ul {
+  padding-left: 1.25rem;
+}
+
+.blueprint li {
+  margin: 0.4rem 0;
+}
+
+.blueprint strong {
+  color: var(--accent);
+}
+
+/* Prev / next navigation between blueprints */
+.bp-nav {
+  max-width: var(--article-width);
+  margin: 40px auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* ==============================
@@ -201,6 +454,16 @@ footer {
   color: var(--text-dim);
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
 footer a {
   color: var(--accent);
   text-decoration: none;
@@ -210,61 +473,58 @@ footer a:hover {
   text-shadow: 0 0 8px var(--accent);
 }
 
+footer p {
+  margin: 0.25rem 0;
+}
+
 /* ==============================
    Animations
    ============================== */
 @keyframes glow {
   from { text-shadow: 0 0 20px var(--accent); }
-  to { text-shadow: 0 0 40px var(--accent-alt); }
+  to   { text-shadow: 0 0 40px var(--accent-alt); }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(60px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-/* ===== Tools Comparison Section ===== */
-#tools-comparison {
-  text-align: center;
-  margin-top: 4rem;
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-#tools-comparison h2 {
-  color: var(--accent);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* ==============================
+   Responsive
+   ============================== */
+@media (max-width: 560px) {
+  .nav-inner {
+    justify-content: center;
+  }
+
+  section {
+    padding: 3rem 1.25rem;
+  }
 }
 
-#tools-comparison p {
-  color: var(--text-dim);
-  max-width: 720px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-}
+/* ==============================
+   Reduced motion
+   ============================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-#tools-comparison .card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.15);
-  border-radius: 14px;
-  padding: 2rem;
-  transition: all 0.4s ease;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
-}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 
-#tools-comparison .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
-}
-
-#tools-comparison h3 {
-  color: var(--accent-alt);
-  margin-bottom: 0.6rem;
-}
-
-#tools-comparison strong {
-  color: var(--accent);
+  #stars {
+    display: none;
+  }
 }
