@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autonomous Ops Agent | Agentic AI Blueprint</title>
-  <meta name="description" content="A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards." />
+  <title>Autonomous Ops Agent | Fortune Owivri Blueprint</title>
+  <meta name="description" content="How I built an operations agent that triages incidents, runs only approved playbooks, and escalates anything with a blast radius a human should own." />
   <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/blueprints/ops-agent.html" />
   <meta name="theme-color" content="#000010" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -15,28 +15,29 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../styles.css" />
   <script src="../site.js" defer></script>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Autonomous Ops Agent | Agentic AI Blueprint" />
-  <meta property="og:description" content="A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards." />
+  <meta property="og:title" content="Autonomous Ops Agent | Fortune Owivri Blueprint" />
+  <meta property="og:description" content="How I built an operations agent that triages incidents, runs only approved playbooks, and escalates anything with a blast radius a human should own." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://fortune5560.github.io/agentic-ai/blueprints/ops-agent.html" />
-  <meta property="og:site_name" content="Agentic AI" />
+  <meta property="og:site_name" content="Fortune Owivri — Agentic AI" />
   <meta property="og:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
   <meta property="og:image:width" content="1424" />
   <meta property="og:image:height" content="752" />
-  <meta property="og:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+  <meta property="og:image:alt" content="Fortune Owivri — Agentic AI" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Autonomous Ops Agent | Agentic AI Blueprint" />
-  <meta name="twitter:description" content="A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards." />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="Autonomous Ops Agent | Fortune Owivri Blueprint" />
+  <meta name="twitter:description" content="Incident triage with explicit guardrails, approved playbooks, and escalation a human owns." />
   <meta name="twitter:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
-  <meta name="twitter:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — Agentic AI" />
 
   <!-- Schema.org JSON-LD for structured data -->
   <script type="application/ld+json">
@@ -44,18 +45,22 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Autonomous Ops Agent",
-    "description": "A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards.",
+    "description": "How I built an operations agent that triages incidents, runs only approved playbooks, and escalates anything with a blast radius a human should own.",
     "datePublished": "2026-01-06",
-    "dateModified": "2026-07-18",
+    "dateModified": "2026-10-29",
     "mainEntityOfPage": "https://fortune5560.github.io/agentic-ai/blueprints/ops-agent.html",
     "author": {
-      "@type": "Organization",
-      "name": "Agentic AI",
-      "url": "https://fortune5560.github.io/agentic-ai/"
+      "@type": "Person",
+      "name": "Fortune Owivri",
+      "url": "https://fortune5560.github.io/agentic-ai/",
+      "sameAs": [
+        "https://x.com/slatty5560",
+        "https://www.linkedin.com/in/fortune-owivri-9a4504289"
+      ]
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Agentic AI",
+      "@type": "Person",
+      "name": "Fortune Owivri",
       "url": "https://fortune5560.github.io/agentic-ai/"
     }
   }
@@ -93,9 +98,13 @@
   <!-- Navigation -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <strong class="nav-brand">Agentic AI</strong>
+      <strong class="nav-brand"><a href="../">Fortune Owivri</a></strong>
       <div class="nav-links">
-        <a href="../">← Back to Home</a>
+        <a href="../#work">Work</a>
+        <a href="./">Blueprints</a>
+        <a href="../demo/">Sandbox</a>
+        <a href="../#about">About</a>
+        <a href="../#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -113,49 +122,125 @@
   <main id="main">
     <article class="blueprint">
       <h1>Blueprint #1: Autonomous Ops Agent</h1>
-      <p class="lede">Reduce manual operational load without sacrificing safety, auditability, or human control.</p>
-      <p class="updated">Last updated <time datetime="2026-07-18">July 18, 2026</time>.</p>
+      <p class="lede">An agent that resolves what it can prove it should resolve, and hands the rest to a human with the work already done.</p>
+      <p class="updated">Last updated <time datetime="2026-10-29">October 29, 2026</time>.</p>
 
-      <!-- Problem Section -->
+      <p class="article-cta">
+        <a class="cta" href="../demo/">Run the sandbox</a>
+        <span class="article-cta-note">14 scenarios, an answer key, and results computed in your browser.</span>
+      </p>
+
       <h2>Problem</h2>
       <p>
-        Manual operational workflows introduce delays, alert fatigue, and human error. Fully autonomous automation without oversight introduces unacceptable risk.
+        Manual operations work is slow in a way that's hard to put a number on: an alert
+        fires, someone context-switches, reads a runbook, does the obvious thing. Most
+        incidents are boring and repetitive. Full autonomy is worse than the alternative,
+        because the one time the agent guesses wrong on something irreversible, you've
+        traded a slow afternoon for an incident.
+      </p>
+      <p>
+        So I didn't build an agent that does everything. I built one that can prove which
+        of my incidents are safe to resolve alone.
       </p>
 
-      <!-- Goal Section -->
       <h2>Goal</h2>
       <p>
-        Design an agentic system that responds to operational events autonomously, while preserving safety, auditability, and human control.
+        Resolve the routine cases without a human in the loop, and for everything else,
+        arrive at the on-call engineer with a diagnosis and a proposed remediation already
+        prepared — without ever executing it.
       </p>
 
-      <!-- System Design Section -->
-      <h2>System Design</h2>
+      <h2>How the decision actually works</h2>
+      <p>
+        The loop is deliberately small: classify, select a candidate action, clear the
+        guardrails, then either execute or escalate. I run the guardrails <em>after</em>
+        picking an action, and any one of them can stop it.
+      </p>
+      <ol>
+        <li><strong>Classify.</strong> Severity comes from the signals — error rate, affected users, revenue at risk — not from the alert's own label. An alert that calls itself "critical" gets treated as critical only if the numbers say so.</li>
+        <li><strong>Select.</strong> The candidate action is chosen from a fixed list of approved playbooks, matched on symptom. There is no free-form action generation, because a generated command has an unbounded blast radius.</li>
+        <li><strong>Check the guards.</strong> Confidence threshold, risk tier, blast-radius cap, runbook coverage, and a blocklist for destructive requests.</li>
+        <li><strong>Act or escalate.</strong> Every guard that fired is recorded, so an escalation isn't "the agent was unsure" — it's "the agent stopped at <em>this</em> line."</li>
+      </ol>
+
+      <h2>Guardrails</h2>
       <ul>
-        <li>Event-driven triggers (alerts, logs, system signals)</li>
-        <li>Deterministic orchestration layer</li>
-        <li>LLM-based planning and decision support</li>
-        <li>Explicit human-in-the-loop approval gates</li>
+        <li><strong>Low-risk only.</strong> Autonomous execution is limited to actions that are reversible. A rollback or migration never auto-runs, however clear the signal.</li>
+        <li><strong>Confidence threshold.</strong> If the evidence is thin, the agent doesn't act confidently and weakly — it escalates.</li>
+        <li><strong>Blast-radius cap.</strong> Past a set number of affected users or revenue at risk, a human owns the decision even if the playbook is safe.</li>
+        <li><strong>Destructive-action blocklist.</strong> Delete, migration, credential rotation, billing changes: never autonomous.</li>
+        <li><strong>Audit trail.</strong> Every step, every guard, every value that was checked, in order.</li>
       </ul>
 
-      <!-- Tooling Section -->
-      <h2>Tooling</h2>
-      <ul>
-        <li><strong>Orchestration:</strong> n8n</li>
-        <li><strong>Reasoning:</strong> LLM planner</li>
-        <li><strong>Interfaces:</strong> APIs, dashboards, notifications</li>
-      </ul>
+      <h2>Testing it</h2>
+      <p>
+        The thing I care most about here is that the guardrail logic is <em>testable</em>.
+        I reduced the decision layer to deterministic rules so I could stop guessing and
+        start asserting.
+      </p>
+      <p>
+        I wrote 14 incidents and, for each one, what a competent on-call engineer should
+        do — <em>before</em> looking at what the engine returned. That answer key is the
+        only reason a pass rate means anything. The suite also checks that the engine
+        replays identically, and that every guardrail is actually exercised by at least
+        one scenario (an untriggered guard is a guard you haven't tested).
+      </p>
+      <p>
+        You can run it yourself: <a class="cta-link" href="../demo/">in the sandbox</a>, or
+        with <code>node demo/ops-agent-engine.js</code> from the repo root. The script
+        exits non-zero when a scenario diverges or the replay stops being deterministic,
+        so it can gate a change.
+      </p>
+      <p class="note">
+        What that measures: decision agreement against my answer key, how often the agent
+        acts without a human, and guardrail coverage. What it does <em>not</em> measure:
+        model accuracy, latency, cost, or behaviour under real production traffic — there
+        is no model in the tested path.
+      </p>
 
-      <!-- Human-in-the-Loop Section -->
       <h2>Human-in-the-Loop</h2>
       <p>
-        High-impact actions (deployments, escalations, system changes) require explicit human approval before execution.
+        High-impact actions always require explicit human approval. More usefully, when the
+        agent escalates it hands over the diagnosis, the candidate action, the guard that
+        stopped it, and the numbers behind it — so the human starts from a decision, not
+        from a blank page.
       </p>
 
-      <!-- Outcome Section -->
-      <h2>Outcome</h2>
+      <h2>Tooling</h2>
+      <ul>
+        <li><strong>Orchestration:</strong> n8n — deterministic workflows I can read and version, with the agent as one node rather than the whole system.</li>
+        <li><strong>Reasoning:</strong> an LLM planner for diagnosis and for writing the escalation summary. It does not choose the executed command.</li>
+        <li><strong>Rules:</strong> plain code for classification and guards, because these are the parts that must be testable and identical on every run.</li>
+        <li><strong>Interfaces:</strong> APIs, dashboards and notifications for the actions and the handover.</li>
+      </ul>
+
+      <h2>Result</h2>
       <p>
-        Faster response times, reduced cognitive load on operators, and predictable, auditable automation.
+        I don't have a production number for this agent yet, so I'm not quoting one. The
+        only figure I can stand behind is the test result, and you can reproduce it:
+        the sandbox suite compares the engine against an answer key of 14 scenarios and
+        reports decision accuracy, how often it acted without a human, and unsafe
+        executions.
       </p>
+      <p class="note">
+        <strong>If you've seen a "90% issue resolution" figure attached to this agent, that's
+        my fault for pairing them loosely.</strong> 90% was first-contact resolution in an IT
+        support role at Pitason &amp; Smart Pro in 2022 — a human resolving tickets on first
+        contact, not this agent resolving incidents. The figure is real; the attribution was
+        wrong, and I've corrected it everywhere it appeared.
+      </p>
+      <p>
+        The part I'd actually defend is quieter: every autonomous action traces back to an
+        approved playbook and a set of guards that passed, and every escalation says exactly
+        why.
+      </p>
+
+      <h2>What I'd change next</h2>
+      <ul>
+        <li>Feed real incident history in and grow the playbook list from evidence rather than imagination.</li>
+        <li>Add a shadow mode where the agent proposes decisions without executing them, so I can compare against what humans did.</li>
+        <li>Track how often a human overrides an escalation — the most useful signal about whether the guards are tuned right.</li>
+      </ul>
     </article>
   </main>
 
@@ -170,9 +255,13 @@
     <ul class="footer-links">
       <li><a href="../">Home</a></li>
       <li><a href="./">Blueprints</a></li>
+      <li><a href="../demo/">Sandbox</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="../resume/">Resume</a></li>
       <li><a href="../rss.xml">RSS</a></li>
     </ul>
-    <p>© 2026 Agentic AI. All rights reserved.</p>
+    <p>© 2026 Fortune Owivri · Agentic AI</p>
   </footer>
 </body>
 </html>
