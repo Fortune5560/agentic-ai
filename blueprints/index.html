@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blueprints | Agentic AI</title>
-  <meta name="description" content="Educational blueprints for building real-world agentic AI systems." />
+  <title>Blueprints | Fortune Owivri</title>
+  <meta name="description" content="How I design, govern and test agentic AI systems — written up blueprint by blueprint." />
   <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/blueprints/" />
   <meta name="theme-color" content="#000010" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -15,28 +15,29 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../styles.css" />
   <script src="../site.js" defer></script>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Blueprints | Agentic AI" />
-  <meta property="og:description" content="Educational blueprints for building real-world agentic AI systems." />
+  <meta property="og:title" content="Blueprints | Fortune Owivri" />
+  <meta property="og:description" content="How I design, govern and test agentic AI systems." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fortune5560.github.io/agentic-ai/blueprints/" />
-  <meta property="og:site_name" content="Agentic AI" />
+  <meta property="og:site_name" content="Fortune Owivri — Agentic AI" />
   <meta property="og:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
   <meta property="og:image:width" content="1424" />
   <meta property="og:image:height" content="752" />
-  <meta property="og:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+  <meta property="og:image:alt" content="Fortune Owivri — Agentic AI" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blueprints | Agentic AI" />
-  <meta name="twitter:description" content="Educational blueprints for building real-world agentic AI systems." />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="Blueprints | Fortune Owivri" />
+  <meta name="twitter:description" content="How I design, govern and test agentic AI systems." />
   <meta name="twitter:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
-  <meta name="twitter:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — Agentic AI" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -44,8 +45,17 @@
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Agentic AI Blueprints",
-    "description": "Educational blueprints for building real-world agentic AI systems.",
+    "description": "How I design, govern and test agentic AI systems.",
     "url": "https://fortune5560.github.io/agentic-ai/blueprints/",
+    "author": {
+      "@type": "Person",
+      "name": "Fortune Owivri",
+      "url": "https://fortune5560.github.io/agentic-ai/",
+      "sameAs": [
+        "https://x.com/slatty5560",
+        "https://www.linkedin.com/in/fortune-owivri-9a4504289"
+      ]
+    },
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": [
@@ -78,41 +88,54 @@
   <!-- Navigation -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <strong class="nav-brand">Agentic AI</strong>
+      <strong class="nav-brand"><a href="../">Fortune Owivri</a></strong>
       <div class="nav-links">
-        <a href="../">← Back to Home</a>
+        <a href="../#work">Work</a>
+        <a href="./">Blueprints</a>
+        <a href="../demo/">Sandbox</a>
+        <a href="../#about">About</a>
+        <a href="../#contact">Contact</a>
       </div>
     </div>
   </nav>
 
   <main id="main">
     <section>
-      <h1>Agentic AI Blueprints</h1>
-      <p>
-        Practical, production-oriented guides that explain how agentic systems
-        are designed, governed, and deployed in the real world.
+      <h1>Blueprints</h1>
+      <p class="section-lede">
+        These are the write-ups I do for myself, mostly: what I built, what I chose,
+        what I rejected, and where the thing still breaks. I publish them because
+        explaining a system is the fastest way to find out whether you actually
+        understood it.
       </p>
 
       <div class="grid">
         <a class="card" href="./ops-agent.html">
           <p class="card-eyebrow">Blueprint #1</p>
           <h3>Autonomous Ops Agent</h3>
-          <p>Design safe, auditable agents for operations and infrastructure.</p>
+          <p>Incident triage with explicit guardrails, approved playbooks, and escalation for anything that can't be undone. Includes a sandbox you can run.</p>
           <p class="cta-link">Read Blueprint →</p>
         </a>
 
         <a class="card" href="./research-agent.html">
           <p class="card-eyebrow">Blueprint #2</p>
           <h3>Research &amp; Reporting Agent</h3>
-          <p>Build agents that gather sources, reason, and produce trusted outputs.</p>
+          <p>Source discovery, credibility filtering, and verification loops — with a human approving the report before it goes anywhere.</p>
           <p class="cta-link">Read Blueprint →</p>
         </a>
 
         <a class="card" href="./productivity-agent.html">
           <p class="card-eyebrow">Blueprint #3</p>
           <h3>Personal Productivity Agent</h3>
-          <p>Human-first agents that assist execution without removing control.</p>
+          <p>An agent that plans and assists without ever committing on a person's behalf.</p>
           <p class="cta-link">Read Blueprint →</p>
+        </a>
+
+        <a class="card" href="../demo/">
+          <p class="card-eyebrow">Interactive</p>
+          <h3>Ops Agent Sandbox</h3>
+          <p>The decision layer of Blueprint #1, running in your browser with a 14-scenario repeatable test suite.</p>
+          <p class="cta-link">Open the sandbox →</p>
         </a>
       </div>
     </section>
@@ -123,9 +146,12 @@
     <ul class="footer-links">
       <li><a href="../">Home</a></li>
       <li><a href="./">Blueprints</a></li>
+      <li><a href="../demo/">Sandbox</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
       <li><a href="../rss.xml">RSS</a></li>
     </ul>
-    <p>© 2026 Agentic AI. All rights reserved.</p>
+    <p>© 2026 Fortune Owivri · Agentic AI</p>
   </footer>
 </body>
 </html>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Agentic AI — Blueprints</title>
+    <title>Fortune Owivri — Agentic AI Blueprints</title>
     <link>https://fortune5560.github.io/agentic-ai/</link>
     <atom:link href="https://fortune5560.github.io/agentic-ai/rss.xml" rel="self" type="application/rss+xml" />
-    <description>Practical blueprints for building safe, auditable, agentic AI systems.</description>
+    <description>How I design, govern and test agentic AI systems.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jul 2026 09:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 09:00:00 +0100</lastBuildDate>
 
     <item>
       <title>Blueprint #1: Autonomous Ops Agent</title>
       <link>https://fortune5560.github.io/agentic-ai/blueprints/ops-agent.html</link>
       <guid isPermaLink="true">https://fortune5560.github.io/agentic-ai/blueprints/ops-agent.html</guid>
       <pubDate>Tue, 06 Jan 2026 20:34:02 +0100</pubDate>
-      <description>A production blueprint for building an autonomous operations agent with human-in-the-loop safeguards.</description>
+      <description>Incident triage with explicit guardrails, approved playbooks, and escalation for anything that can't be undone — plus a sandbox you can run.</description>
     </item>
 
     <item>
@@ -21,7 +21,7 @@
       <link>https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html</link>
       <guid isPermaLink="true">https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html</guid>
       <pubDate>Tue, 06 Jan 2026 20:34:02 +0100</pubDate>
-      <description>A blueprint for autonomous research with verification, credibility filtering, and human review.</description>
+      <description>Source discovery, credibility filtering and verification, with a human approving the report before it ships.</description>
     </item>
 
     <item>
@@ -29,7 +29,15 @@
       <link>https://fortune5560.github.io/agentic-ai/blueprints/productivity-agent.html</link>
       <guid isPermaLink="true">https://fortune5560.github.io/agentic-ai/blueprints/productivity-agent.html</guid>
       <pubDate>Tue, 06 Jan 2026 20:34:02 +0100</pubDate>
-      <description>A human-centric agent blueprint focused on task execution without loss of control.</description>
+      <description>An agent that plans and assists without ever committing on a person's behalf.</description>
+    </item>
+
+    <item>
+      <title>Ops Agent Sandbox — a testable demo</title>
+      <link>https://fortune5560.github.io/agentic-ai/demo/</link>
+      <guid isPermaLink="true">https://fortune5560.github.io/agentic-ai/demo/</guid>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 +0100</pubDate>
+      <description>The decision layer behind Blueprint #1, running in the browser with a repeatable 14-scenario test suite and an answer key.</description>
     </item>
 
   </channel>

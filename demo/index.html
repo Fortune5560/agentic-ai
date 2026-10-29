@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ops Agent Sandbox | Agentic AI Demo</title>
+  <meta name="description" content="A testable, rules-based operations-agent demo. Adjust an incident, watch the guardrails decide, and run the 14-scenario repeatable suite in your browser." />
+  <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/demo/" />
+  <meta name="theme-color" content="#000010" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../site.js" defer></script>
+  <script src="./ops-agent-engine.js" defer></script>
+  <script src="./demo.js" defer></script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ops Agent Sandbox | Agentic AI Demo" />
+  <meta property="og:description" content="A testable operations-agent demo: adjust an incident, watch the guardrails decide, and run a repeatable 14-scenario suite." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fortune5560.github.io/agentic-ai/demo/" />
+  <meta property="og:site_name" content="Agentic AI" />
+  <meta property="og:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fortune5560.github.io/agentic-ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Blueprints", "item": "https://fortune5560.github.io/agentic-ai/blueprints/" },
+      { "@type": "ListItem", "position": 3, "name": "Ops Agent Sandbox" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand"><a href="../">Agentic AI</a></strong>
+      <div class="nav-links">
+        <a href="./">Sandbox</a>
+        <a href="../blueprints/">Blueprints</a>
+        <a href="../#about">About</a>
+        <a href="../#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li><a href="../blueprints/">Blueprints</a></li>
+      <li aria-current="page">Ops Agent Sandbox</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <section class="demo-intro no-reveal">
+      <h1>Ops Agent Sandbox</h1>
+      <p class="lede">
+        This is a working, inspectable version of the triage loop behind my operations
+        agent. Change an incident, or run my full test suite, and watch which guardrail
+        fires and why. Everything runs in your browser — no API key, no waiting.
+      </p>
+
+      <ul class="badge-row">
+        <li class="badge">Runs offline</li>
+        <li class="badge">Deterministic</li>
+        <li class="badge">Rules-based, not an LLM</li>
+        <li class="badge">Open source in this repo</li>
+      </ul>
+
+      <p class="honesty">
+        <strong>What this is:</strong> the decision layer I use, reduced to deterministic
+        rules so it can be tested. <strong>What this is not:</strong> a simulated production
+        system, and not a claim about any client's numbers. The results below are
+        <em>measured by running the suite</em>, and I only call them measured because the
+        test is repeatable by you.
+      </p>
+    </section>
+
+    <!-- ============ LIVE TEST SUITE ============ -->
+    <section id="suite" class="no-reveal">
+      <h2>1. Repeatable test suite</h2>
+      <p>
+        14 incidents. Each one has an answer key I wrote from on-call reasoning
+        <em>before</em> looking at what the engine does. Run it as many times as you like —
+        the engine is deterministic, so the output will not drift.
+      </p>
+
+      <div class="demo-panel">
+        <div class="demo-toolbar">
+          <button class="cta" type="button" id="run-suite">Run the suite</button>
+          <p class="demo-hint" id="suite-status" role="status" aria-live="polite">
+            Running on page load…
+          </p>
+        </div>
+
+        <div class="metric-grid" id="suite-metrics">
+          <!-- Filled by demo.js from the engine's own output -->
+        </div>
+
+        <div class="table-wrap">
+          <table class="results-table">
+            <caption class="visually-hidden">Scenario results</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Scenario</th>
+                <th scope="col">Answer key</th>
+                <th scope="col">Agent</th>
+                <th scope="col">Guardrail that fired</th>
+              </tr>
+            </thead>
+            <tbody id="suite-rows">
+              <tr><td colspan="5">Results load with JavaScript. Run the same suite yourself with <code>node demo/ops-agent-engine.js</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="demo-hint">
+          Measured in your browser just now, using the same engine file that the Node
+          test harness runs. Definition of a pass: the agent's decision matches the
+          answer key. A <em>failure</em> in the dangerous direction — executing an action
+          the answer key says should have gone to a human — is counted separately as an
+          unsafe execution.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SINGLE INCIDENT ============ -->
+    <section id="try" class="no-reveal">
+      <h2>2. Try one incident</h2>
+      <p>
+        Pick a symptom and move the sliders. The decision, the guardrails and the audit
+        trail update as you go. Every value you set is fed straight into the same
+        <code>decide()</code> function the test suite calls.
+      </p>
+
+      <div class="demo-panel demo-split">
+        <form class="controls" id="incident-form" autocomplete="off">
+          <fieldset>
+            <legend>Incident</legend>
+
+            <div class="field">
+              <label for="symptom">Symptom</label>
+              <select id="symptom" name="symptom">
+                <option value="http_5xx_spike">HTTP 5xx spike</option>
+                <option value="worker_backlog">Worker backlog</option>
+                <option value="stale_cache">Stale cache</option>
+                <option value="db_connection_exhaustion">DB connection exhaustion</option>
+                <option value="bad_feature_flag">Bad feature flag</option>
+                <option value="zombie_locks">Stale locks</option>
+                <option value="traffic_hotspot">Traffic hotspot</option>
+                <option value="post_deploy_regression">Post-deploy regression</option>
+                <option value="unknown_scheduler_drift">Unknown scheduler drift</option>
+              </select>
+            </div>
+
+            <div class="field field-range">
+              <label for="errorRate">Error rate <output id="errorRate-out">12%</output></label>
+              <input type="range" id="errorRate" name="errorRate" min="0" max="100" step="1" value="12" />
+            </div>
+
+            <div class="field field-range">
+              <label for="affectedUsers">Affected users <output id="affectedUsers-out">4,000</output></label>
+              <input type="range" id="affectedUsers" name="affectedUsers" min="0" max="60000" step="500" value="4000" />
+            </div>
+
+            <div class="field field-range">
+              <label for="revenueAtRisk">Revenue at risk (USD) <output id="revenueAtRisk-out">$12,000</output></label>
+              <input type="range" id="revenueAtRisk" name="revenueAtRisk" min="0" max="300000" step="1000" value="12000" />
+            </div>
+
+            <div class="field field-range">
+              <label for="extra">Signal-specific value <output id="extra-out">300</output></label>
+              <input type="range" id="extra" name="extra" min="0" max="6000" step="10" value="300" />
+              <span class="hint" id="extra-hint">Queue depth in jobs (this symptom's playbook reads queue depth).</span>
+            </div>
+
+            <div class="field">
+              <label for="requestedAction">Or hand the agent a free-text instruction <span class="hint">(optional)</span></label>
+              <input type="text" id="requestedAction" name="requestedAction" placeholder="e.g. restart the API pods" />
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="output" aria-live="polite">
+          <div class="decision-card" id="decision-card">
+            <!-- Filled by demo.js -->
+          </div>
+          <h3 class="audit-title">Audit trail</h3>
+          <ol class="audit" id="audit">
+            <li>Waiting for JavaScript…</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ METHOD ============ -->
+    <section id="method" class="no-reveal">
+      <h2>3. How to read these results honestly</h2>
+      <div class="grid">
+        <div class="card text-left">
+          <h3>What is measured</h3>
+          <p>
+            Decision agreement against a fixed answer key, how often the agent acts
+            without a human, and whether every guardrail is actually exercised by at
+            least one scenario. Those numbers come from executing the suite.
+          </p>
+        </div>
+        <div class="card text-left">
+          <h3>What is not measured</h3>
+          <p>
+            Production latency, cost per incident, model accuracy, or how this performs
+            against real traffic. A rules engine has no model in it, and nothing on this
+            page touches a live system.
+          </p>
+        </div>
+        <div class="card text-left">
+          <h3>Why an answer key</h3>
+          <p>
+            Without an independent expectation you can only measure whether the code
+            does what the code does. Writing the expected decision first is what makes
+            the pass rate mean something.
+          </p>
+        </div>
+      </div>
+
+      <p class="method-note">
+        Reproduce locally:
+        <code>node demo/ops-agent-engine.js</code> for the human-readable report, or
+        <code>node demo/ops-agent-engine.js --json</code> for a diffable artifact. The
+        script exits non-zero if any scenario diverges or the engine stops being
+        deterministic, so it can gate a change in CI.
+      </p>
+    </section>
+  </main>
+
+  <div class="bp-nav">
+    <a href="../blueprints/ops-agent.html" class="cta">← Read the Ops Agent blueprint</a>
+    <a href="../#contact" class="cta">Talk to me about this →</a>
+  </div>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../blueprints/">Blueprints</a></li>
+      <li><a href="./">Sandbox</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="../rss.xml">RSS</a></li>
+    </ul>
+    <p>© 2026 Fortune Owivri · Agentic AI</p>
+  </footer>
+</body>
+</html>

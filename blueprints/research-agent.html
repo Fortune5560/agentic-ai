@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research &amp; Reporting Agent | Agentic AI Blueprint</title>
-  <meta name="description" content="A blueprint for building an agent that performs autonomous research with verification and human review." />
+  <title>Research &amp; Reporting Agent | Fortune Owivri Blueprint</title>
+  <meta name="description" content="How I build a research agent that discovers sources, filters for credibility, verifies claims, and hands a human a report they can check." />
   <link rel="canonical" href="https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html" />
   <meta name="theme-color" content="#000010" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -15,47 +15,51 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../styles.css" />
   <script src="../site.js" defer></script>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Research &amp; Reporting Agent | Agentic AI Blueprint" />
-  <meta property="og:description" content="A blueprint for autonomous research with verification, credibility filtering, and human review." />
+  <meta property="og:title" content="Research &amp; Reporting Agent | Fortune Owivri Blueprint" />
+  <meta property="og:description" content="How I build a research agent that discovers sources, filters for credibility, verifies claims, and hands a human a report they can check." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html" />
-  <meta property="og:site_name" content="Agentic AI" />
+  <meta property="og:site_name" content="Fortune Owivri — Agentic AI" />
   <meta property="og:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
   <meta property="og:image:width" content="1424" />
   <meta property="og:image:height" content="752" />
-  <meta property="og:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+  <meta property="og:image:alt" content="Fortune Owivri — Agentic AI" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Research &amp; Reporting Agent | Agentic AI Blueprint" />
-  <meta name="twitter:description" content="A blueprint for autonomous research with verification, credibility filtering, and human review." />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="Research &amp; Reporting Agent | Fortune Owivri Blueprint" />
+  <meta name="twitter:description" content="Source discovery, credibility filtering and verification, with a human approving the report." />
   <meta name="twitter:image" content="https://fortune5560.github.io/agentic-ai/og-image.png" />
-  <meta name="twitter:image:alt" content="Agentic AI — Autonomous AI That Gets Work Done" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — Agentic AI" />
 
-  <!-- Schema.org JSON-LD for structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Research & Reporting Agent",
-    "description": "A blueprint for building an autonomous research agent with verification and human review.",
+    "description": "How I build a research agent that discovers sources, filters for credibility, verifies claims, and hands a human a report they can check.",
     "datePublished": "2026-01-06",
-    "dateModified": "2026-07-18",
+    "dateModified": "2026-10-29",
     "mainEntityOfPage": "https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html",
     "author": {
-      "@type": "Organization",
-      "name": "Agentic AI",
-      "url": "https://fortune5560.github.io/agentic-ai/"
+      "@type": "Person",
+      "name": "Fortune Owivri",
+      "url": "https://fortune5560.github.io/agentic-ai/",
+      "sameAs": [
+        "https://x.com/slatty5560",
+        "https://www.linkedin.com/in/fortune-owivri-9a4504289"
+      ]
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "Agentic AI",
+      "@type": "Person",
+      "name": "Fortune Owivri",
       "url": "https://fortune5560.github.io/agentic-ai/"
     }
   }
@@ -66,23 +70,9 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://fortune5560.github.io/agentic-ai/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blueprints",
-        "item": "https://fortune5560.github.io/agentic-ai/blueprints/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Research & Reporting Agent"
-      }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fortune5560.github.io/agentic-ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Blueprints", "item": "https://fortune5560.github.io/agentic-ai/blueprints/" },
+      { "@type": "ListItem", "position": 3, "name": "Research & Reporting Agent" }
     ]
   }
   </script>
@@ -90,17 +80,19 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Navigation -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <strong class="nav-brand">Agentic AI</strong>
+      <strong class="nav-brand"><a href="../">Fortune Owivri</a></strong>
       <div class="nav-links">
-        <a href="../">← Back to Home</a>
+        <a href="../#work">Work</a>
+        <a href="./">Blueprints</a>
+        <a href="../demo/">Sandbox</a>
+        <a href="../#about">About</a>
+        <a href="../#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Breadcrumb Navigation -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <ol>
       <li><a href="../">Home</a></li>
@@ -109,70 +101,99 @@
     </ol>
   </nav>
 
-  <!-- Blueprint Content -->
   <main id="main">
     <article class="blueprint">
       <h1>Blueprint #2: Research &amp; Reporting Agent</h1>
-      <p class="lede">Produce trusted, executive-ready insights with autonomous research that never sacrifices verification.</p>
-      <p class="updated">Last updated <time datetime="2026-07-18">July 18, 2026</time>.</p>
+      <p class="lede">An agent that gathers and checks before it writes, so the report is something a human can verify rather than something they have to trust.</p>
+      <p class="updated">Last updated <time datetime="2026-10-29">October 29, 2026</time>.</p>
 
-      <!-- Problem Section -->
       <h2>Problem</h2>
       <p>
-        Research is time-intensive, inconsistent, and difficult to verify at scale. Autonomous research without validation leads to hallucinations and low trust.
+        Research is slow, and it's inconsistent in a specific way: the quality of the
+        output depends on how tired the person doing it is. Ask a model to skip the
+        reading and just produce the summary, and you get fluent text with no provenance —
+        which is worse than slow, because it looks finished.
       </p>
 
-      <!-- Goal Section -->
       <h2>Goal</h2>
       <p>
-        Build an agent that gathers information autonomously while enforcing verification, transparency, and human review.
+        An agent that does the gathering and the checking at machine speed, but presents
+        every claim with the source that supports it, and never publishes on its own.
       </p>
 
-      <!-- System Design Section -->
-      <h2>System Design</h2>
-      <ul>
-        <li>Autonomous source discovery</li>
-        <li>Credibility filtering and ranking</li>
-        <li>Multi-step reasoning and synthesis</li>
-        <li>Explicit verification loops</li>
-      </ul>
+      <h2>How I built it</h2>
+      <ol>
+        <li><strong>Decompose the question.</strong> The agent turns the brief into sub-questions, so retrieval has something specific to look for.</li>
+        <li><strong>Retrieve broadly, then filter.</strong> Sources come in from search and from my indexed corpus, then get scored for credibility and recency before anything is read closely.</li>
+        <li><strong>Verify before synthesising.</strong> A claim that appears in one low-quality source doesn't become a sentence in the report. Claims need support, and the report keeps the link.</li>
+        <li><strong>Write with provenance.</strong> Every paragraph carries its citations. If a claim can't be traced, it doesn't ship.</li>
+        <li><strong>Hand over for review.</strong> A human approves the report before distribution, and can see what was rejected as well as what was used.</li>
+      </ol>
 
-      <!-- Tooling Section -->
+      <h2>Where the speed came from</h2>
+      <p>
+        Most of the retrieval speed-up was structural rather than clever: chunking that
+        matched how the documents are actually read, an index sized for the queries I
+        really run instead of a generic default, and a filter pass that discards
+        low-credibility sources <em>before</em> they get embedded into context. The model
+        was rarely the bottleneck.
+      </p>
+      <p>
+        On my own retrieval pipeline, that came out to <strong>40% faster
+        retrieval</strong> — measured on my pipeline, with the baseline and measurement
+        window available on request. It isn't an independently audited benchmark, and it
+        describes retrieval only, not end-to-end report quality.
+      </p>
+      <p class="note">
+        What this does <em>not</em> claim: better report accuracy, lower cost per report,
+        or faster human review. Retrieval latency is one measurable slice, and I quote
+        only that slice.
+      </p>
+
       <h2>Tooling</h2>
       <ul>
-        <li><strong>Retrieval:</strong> Search APIs, vector databases</li>
-        <li><strong>Reasoning:</strong> LLM with structured prompts</li>
-        <li><strong>Output:</strong> Reports, summaries, citations</li>
+        <li><strong>Retrieval:</strong> search APIs for the open web, plus a vector store over my own corpus.</li>
+        <li><strong>Reasoning:</strong> an LLM with structured prompts for decomposition, verification and drafting — each stage constrained and checkable.</li>
+        <li><strong>Output:</strong> reports and summaries that keep their citations in the artefact, not in a side channel.</li>
       </ul>
 
-      <!-- Human-in-the-Loop Section -->
       <h2>Human-in-the-Loop</h2>
       <p>
-        Final reports are reviewed and approved by a human before distribution or publication.
+        The agent prepares; a human publishes. Reviewers see the draft, the source list,
+        the confidence per claim, and what got dropped — because the useful review question
+        isn't "does this read well" but "is this true".
       </p>
 
-      <!-- Outcome Section -->
-      <h2>Outcome</h2>
-      <p>
-        High-quality, trustworthy research delivered faster, with full transparency into sources and reasoning.
-      </p>
+      <h2>Failure modes I design around</h2>
+      <ul>
+        <li><strong>Confident synthesis of thin evidence.</strong> Mitigated by requiring support per claim rather than per report.</li>
+        <li><strong>Source laundering.</strong> Five pages repeating the same weak claim are one source, not five.</li>
+        <li><strong>Stale material.</strong> Recency is scored, and dates are surfaced next to the claim.</li>
+      </ul>
+
+      <h2>What I'd change next</h2>
+      <ul>
+        <li>Build a held-out claim set so verification is measured, not asserted.</li>
+        <li>Track reviewer edit distance as the real quality signal.</li>
+      </ul>
     </article>
   </main>
 
-  <!-- Previous and Next Blueprint Navigation -->
   <div class="bp-nav">
     <a href="./ops-agent.html" class="cta">← Previous: Autonomous Ops Agent</a>
     <a href="./productivity-agent.html" class="cta">Next: Personal Productivity Agent →</a>
   </div>
 
-  <!-- Footer -->
   <footer>
     <ul class="footer-links">
       <li><a href="../">Home</a></li>
       <li><a href="./">Blueprints</a></li>
+      <li><a href="../demo/">Sandbox</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
       <li><a href="../rss.xml">RSS</a></li>
     </ul>
-    <p>© 2026 Agentic AI. All rights reserved.</p>
+    <p>© 2026 Fortune Owivri · Agentic AI</p>
   </footer>
 </body>
 </html>

@@ -27,9 +27,11 @@
     }
   }
 
-  /* ---- Scroll-reveal for sections and blueprint articles ---- */
+  /* ---- Scroll-reveal for sections and blueprint articles ----
+     .no-reveal opts an interactive section out (the sandbox) so a failed
+     observer can never hide something the visitor is meant to click. */
   var els = Array.prototype.slice.call(
-    document.querySelectorAll('main section, article.blueprint, .bp-nav')
+    document.querySelectorAll('main section:not(.no-reveal), article.blueprint, .bp-nav')
   );
   els.forEach(function (el) { el.classList.add('reveal'); });
 
