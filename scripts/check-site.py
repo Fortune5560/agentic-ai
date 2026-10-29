@@ -38,6 +38,10 @@ SITE_ORIGIN = "https://fortune5560.github.io"
 
 EXTERNAL_OK = {"https://x.com/slatty5560", "https://www.linkedin.com/in/fortune-owivri-9a4504289"}
 
+# Pages that intentionally carry their own CSS instead of styles.css (the resume is
+# a print-first document; sharing the site sheet would fight @page rules).
+SELF_CONTAINED = {"resume/index.html"}
+
 errors: list[str] = []
 warnings: list[str] = []
 
@@ -286,6 +290,8 @@ def check_classes(pages: dict[str, Page]) -> None:
 
     used: dict[str, set[str]] = {}
     for rel in pages:
+        if rel in SELF_CONTAINED:
+            continue
         with open(os.path.join(ROOT, rel), encoding="utf-8") as fh:
             src = fh.read()
         for attr in re.findall(r'class="([^"]*)"', src):

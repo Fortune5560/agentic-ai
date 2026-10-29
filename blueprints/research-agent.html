@@ -138,16 +138,19 @@
         low-credibility sources <em>before</em> they get embedded into context. The model
         was rarely the bottleneck.
       </p>
-      <p>
-        On my own retrieval pipeline, that came out to <strong>40% faster
-        retrieval</strong> — measured on my pipeline, with the baseline and measurement
-        window available on request. It isn't an independently audited benchmark, and it
-        describes retrieval only, not end-to-end report quality.
-      </p>
       <p class="note">
-        What this does <em>not</em> claim: better report accuracy, lower cost per report,
-        or faster human review. Retrieval latency is one measurable slice, and I quote
-        only that slice.
+        <strong>On the 40% figure.</strong> That number came from a real project, but not this
+        one: digitizing the inventory database at Rom Oil (2024–2025) cut record retrieval
+        time by 40%. Same underlying work — indexing and lookup that has to be fast because
+        people are waiting — but it was an inventory system, not an AI retrieval pipeline. I
+        had earlier attached it to this blueprint, which was wrong, so I've removed it. I
+        don't have a measured latency figure for this agent yet.
+      </p>
+      <p>
+        What I'd claim for this blueprint is narrower and testable: retrieval happens before
+        synthesis, sources are scored before they reach the context window, and every claim
+        keeps its citation. Verification quality is the thing worth measuring here, and I
+        haven't built the held-out claim set that would let me quote a number honestly.
       </p>
 
       <h2>Tooling</h2>
@@ -191,6 +194,7 @@
       <li><a href="../demo/">Sandbox</a></li>
       <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
       <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="../resume/">Resume</a></li>
       <li><a href="../rss.xml">RSS</a></li>
     </ul>
     <p>© 2026 Fortune Owivri · Agentic AI</p>

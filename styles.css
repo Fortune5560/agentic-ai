@@ -1112,6 +1112,22 @@ code {
   margin: 2rem auto 0;
 }
 
+/* Hero actions ---------------------------------------------------------- */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer ---------------------------------------------------------------- */
+.footer-note {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
 /* Contact --------------------------------------------------------------- */
 .contact-actions {
   display: flex;

@@ -8,6 +8,7 @@
     "test:engine": "node demo/ops-agent-engine.js",
     "test:ui": "node --test tests/demo-ui.test.mjs",
     "check": "python3 scripts/check-site.py",
+    "build:resume": "python3 scripts/build-resume.py",
     "serve": "python3 -m http.server 8080"
   },
   "devDependencies": {
