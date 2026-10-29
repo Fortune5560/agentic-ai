@@ -36,7 +36,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_PATH = "/agentic-ai/"          # GitHub Pages project path
 SITE_ORIGIN = "https://fortune5560.github.io"
 
-EXTERNAL_OK = {"https://x.com/slatty5560", "https://www.linkedin.com/in/fortune-owivri-9a4504289"}
+# External destinations that are expected and cannot be validated from this repo:
+# the sibling portfolio project (separate GitHub Pages site) and social profiles.
+EXTERNAL_OK = {
+    "https://x.com/slatty5560",
+    "https://www.linkedin.com/in/fortune-owivri-9a4504289",
+    "https://fortune5560.github.io/fortune-owivri-portfolio/",
+    "https://tally.so/r/44Jqeo",
+}
 
 # Pages that intentionally carry their own CSS instead of styles.css (the resume is
 # a print-first document; sharing the site sheet would fight @page rules).

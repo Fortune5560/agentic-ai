@@ -40,8 +40,8 @@ EMAIL = "fortuneowivri@gmail.com"
 LINKS = [
     ("LinkedIn", "https://www.linkedin.com/in/fortune-owivri-9a4504289",
      "linkedin.com/in/fortune-owivri-9a4504289"),
-    ("Portfolio", "https://fortune5560.github.io/agentic-ai/",
-     "fortune5560.github.io/agentic-ai"),
+    ("Portfolio", "https://fortune5560.github.io/fortune-owivri-portfolio/",
+     "fortune5560.github.io/fortune-owivri-portfolio"),
     ("X", "https://x.com/slatty5560", "x.com/slatty5560"),
 ]
 
@@ -266,8 +266,10 @@ def build_pdf(path: str, total_pages: int | None = None) -> None:
         f'{LOCATION}<br/>{PHONES} · {EMAIL}', ParagraphStyle(
             "contact", parent=body, fontSize=8.6, leading=11.4, textColor=MUTED)))
     story.append(Spacer(1, 2))
+    # Show the readable URL rather than a label: ATS parsers and anyone reading a
+    # printed copy only see the text, never the hyperlink target.
     link_stubs = " · ".join(
-        f'<link href="{url}" color="#0e7490">{label}</link>' for label, url, _ in LINKS)
+        f'<link href="{url}" color="#0e7490">{short}</link>' for _, url, short in LINKS)
     story.append(Paragraph(link_stubs, ParagraphStyle(
         "links", parent=body, fontSize=8.6, leading=11.4, textColor=ACCENT)))
     story.append(Spacer(1, 5))
