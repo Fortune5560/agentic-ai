@@ -1,0 +1,24 @@
+{
+  "name": "fortune-owivri-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portfolio site for Fortune Owivri — IT support, systems and security. Static HTML/CSS/JS with a runnable log-triage lab.",
+  "homepage": "https://fortune5560.github.io/fortune-owivri-portfolio/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fortune5560/fortune-owivri-portfolio.git"
+  },
+  "author": "Fortune Owivri",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "node --test",
+    "serve": "python3 -m http.server 8000",
+    "lab": "node lab/triage-engine.js",
+    "lab:json": "node lab/triage-engine.js --json",
+    "check": "python3 scripts/check-site.py",
+    "assets": "python3 scripts/gen-assets.py"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

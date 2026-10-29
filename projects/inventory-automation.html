@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Automation Web App | Fortune Owivri</title>
+  <meta name="description" content="A small HTML/CSS/JavaScript tool for routine inventory work — CRUD operations, form validation and error handling — built to replace a manual routine, with an honest account of what it does and does not prove." />
+  <link rel="canonical" href="https://fortune5560.github.io/fortune-owivri-portfolio/projects/inventory-automation.html" />
+  <meta name="theme-color" content="#000010" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../site.js" defer></script>
+
+  <meta property="og:title" content="Inventory Automation Web App" />
+  <meta property="og:description" content="CRUD operations, validation and error handling in a small vanilla JS tool — built to remove a manual step, not to demo a framework." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fortune5560.github.io/fortune-owivri-portfolio/projects/inventory-automation.html" />
+  <meta property="og:site_name" content="Fortune Owivri" />
+  <meta property="og:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Fortune Owivri — inventory automation" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="Inventory Automation Web App" />
+  <meta name="twitter:description" content="CRUD operations, validation and error handling in a small vanilla JS tool — built to remove a manual step, not to demo a framework." />
+  <meta name="twitter:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — inventory automation" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Inventory Automation Web App",
+    "description": "A small HTML/CSS/JavaScript tool for routine inventory work — CRUD operations, form validation and error handling — built to replace a manual routine, with an honest account of what it does and does not prove.",
+    "datePublished": "2026-10-29",
+    "dateModified": "2026-10-29",
+    "author": {
+      "@type": "Person",
+      "name": "Fortune Owivri",
+      "url": "https://fortune5560.github.io/fortune-owivri-portfolio/",
+      "sameAs": ["https://www.linkedin.com/in/fortune-owivri-9a4504289"]
+    },
+    "mainEntityOfPage": "https://fortune5560.github.io/fortune-owivri-portfolio/projects/inventory-automation.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fortune5560.github.io/fortune-owivri-portfolio/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://fortune5560.github.io/fortune-owivri-portfolio/projects/" },
+      { "@type": "ListItem", "position": 3, "name": "Inventory automation" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand"><a href="../">Fortune Owivri</a></strong>
+      <div class="nav-links">
+        <a href="../#work">Work</a>
+        <a href="./">Projects</a>
+        <a href="../lab/">Lab</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Projects</a></li>
+      <li aria-current="page">Inventory automation</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <article class="case">
+      <h1>Inventory Automation Web App</h1>
+      <p class="lede">A small front-end tool for the part of stock work that is pure repetition: find the item, change the number, record who changed it.</p>
+      <ul class="case-meta">
+        <li><span class="pill pill-neutral">HTML · CSS · JavaScript</span></li>
+        <li><span class="pill pill-neutral">Portfolio project</span></li>
+        <li><span class="proof proof-lab">Practice build</span></li>
+      </ul>
+
+      <h2>The problem it addresses</h2>
+      <p>
+        Inventory work in a small business usually lives in a spreadsheet, a notebook, or a
+        person's head. That works until someone is away, or until two people edit the same
+        row and one of them silently wins. The fix is not artificial intelligence; it is a
+        small, boring tool that refuses to accept bad input.
+      </p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>CRUD-style operations</strong> on stock records — add, view, edit, remove — with the list updating as you work.</li>
+        <li><strong>Basic data handling</strong> so the current state of the list is what the screen shows, not a stale copy of it.</li>
+        <li><strong>Form validation</strong> that catches empty fields, negative quantities and mismatched units before they reach the data.</li>
+        <li><strong>Error handling</strong> that tells the user what went wrong in words rather than failing silently with a console message nobody sees.</li>
+      </ul>
+
+      <h2>How it is built</h2>
+      <p>
+        Plain HTML, CSS and JavaScript, no framework and no build step. That was a deliberate
+        constraint: the tool has to be something a small business could open, understand and
+        run without a toolchain, and something I could hand over without writing a manual.
+      </p>
+      <p>
+        The interesting work is all in the edges — what happens when a quantity field is
+        empty, when a record is edited twice, when the browser is interrupted mid-edit. Most
+        of the code is there to prevent the boring failures that make a tool untrustworthy.
+      </p>
+
+      <h2>What this demonstrates — and what it doesn't</h2>
+      <div class="note">
+        <p>
+          <strong>It demonstrates:</strong> that I can build, debug and document a working
+          front-end tool, handle validation and error states, and design for someone who is
+          not technical.
+        </p>
+        <p>
+          <strong>It does not demonstrate</strong> measured business impact. This is a
+          practice build, and no runtime number is quoted for it.
+        </p>
+        <p>
+          The <strong>40% faster retrieval</strong> figure elsewhere on this site belongs to a
+          different piece of work — digitizing the inventory database at Rom Oil (2024–2025),
+          where the records were real and the clock was the business's. I have deliberately
+          not attached that number to this app.
+        </p>
+      </div>
+
+      <h2>What I'd do next</h2>
+      <ul>
+        <li>Persist data properly — this needs storage that survives a refresh before it is useful to anyone.</li>
+        <li>Add an audit trail: who changed what, when. In stock work, the change history is often more valuable than the current number.</li>
+        <li>Write tests for the validation rules, since they are the whole point of the tool.</li>
+        <li>Try it on a real workflow for a week and see which field people actually get wrong.</li>
+      </ul>
+
+      <p class="note">
+        <strong>Source code:</strong> available on request — say hello and I will send the
+        repository link or walk you through it live.
+      </p>
+
+      <p class="cta-link-wrap">
+        <a class="cta cta-ghost" href="../Automation_Web_App_Project.pdf" download>Download the one-page PDF version</a>
+      </p>
+
+    </article>
+  </main>
+
+  <div class="case-nav">
+    <a href="./soc-home-lab.html" class="cta cta-ghost">← Previous: SOC home lab</a>
+    <a href="../lab/" class="cta">Next: Try the log-triage lab →</a>
+  </div>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Projects</a></li>
+      <li><a href="../lab/">Lab</a></li>
+      <li><a href="https://fortune5560.github.io/agentic-ai/resume/" rel="noopener">Resume</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+    </ul>
+    <p>© 2026 Fortune Owivri</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log-Triage Lab | Fortune Owivri</title>
+  <meta name="description" content="Run a deterministic auth-log detector in your browser, look at the alerts it raises, then triage seven cases against an answer key. Every number on the page is computed by running the code." />
+  <link rel="canonical" href="https://fortune5560.github.io/fortune-owivri-portfolio/lab/" />
+  <meta name="theme-color" content="#000010" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../site.js" defer></script>
+  <script src="./triage-engine.js" defer></script>
+  <script src="./lab.js" defer></script>
+
+  <meta property="og:title" content="Log-Triage Lab | Fortune Owivri" />
+  <meta property="og:description" content="A deterministic detector over a synthetic auth log, plus a seven-case triage drill scored against an answer key." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fortune5560.github.io/fortune-owivri-portfolio/lab/" />
+  <meta property="og:site_name" content="Fortune Owivri" />
+  <meta property="og:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Fortune Owivri — log-triage lab" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="Log-Triage Lab | Fortune Owivri" />
+  <meta name="twitter:description" content="A deterministic detector over a synthetic auth log, plus a seven-case triage drill." />
+  <meta name="twitter:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — log-triage lab" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Log-Triage Lab",
+    "description": "A deterministic authentication-log detector with a seven-case triage drill scored against an answer key.",
+    "url": "https://fortune5560.github.io/fortune-owivri-portfolio/lab/",
+    "learningResourceType": "Exercise",
+    "teaches": "Security alert triage and disposition",
+    "author": {
+      "@type": "Person",
+      "name": "Fortune Owivri",
+      "url": "https://fortune5560.github.io/fortune-owivri-portfolio/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand"><a href="../">Fortune Owivri</a></strong>
+      <div class="nav-links">
+        <a href="../#work">Work</a>
+        <a href="../projects/">Projects</a>
+        <a href="./">Lab</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li aria-current="page">Lab</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <section>
+      <h1>Log-triage lab</h1>
+      <p class="section-lede">
+        A small detection engine runs over an authentication log, raises alerts, and then
+        hands you seven cases to triage. There is no server and no randomness: the same input
+        produces the same output every time, so the numbers mean something.
+      </p>
+
+      <div class="note note-warn">
+        <p>
+          <strong>The log is synthetic.</strong> It was written by hand to exercise the
+          detection rules — it is not captured traffic from a real network, and nothing here
+          is a production result. What is real is the code: you can run it yourself, and the
+          page's numbers come from that run.
+        </p>
+      </div>
+
+      <h2>How the detector works</h2>
+      <p>
+        Each line of the log is parsed into a timestamp, a source address, a user, a result
+        and an action. Six rules then run over the parsed events, and every rule that fires
+        produces an alert carrying the line numbers that triggered it.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>brute_force</h3>
+          <p>Five or more failures against one account within ten minutes.</p>
+        </div>
+        <div class="card">
+          <h3>password_spray</h3>
+          <p>One source failing against five or more distinct accounts — the pattern per-account lockouts never catch.</p>
+        </div>
+        <div class="card">
+          <h3>success_after_failure</h3>
+          <p>A login that succeeds after three or more failures for the same account. The one that turns noise into an incident.</p>
+        </div>
+        <div class="card">
+          <h3>off_hours_sudo</h3>
+          <p>Privilege escalation outside 07:00–19:00 UTC.</p>
+        </div>
+        <div class="card">
+          <h3>off_hours_account_creation</h3>
+          <p>A new account created outside business hours — a common persistence step.</p>
+        </div>
+        <div class="card">
+          <h3>external_invalid_users</h3>
+          <p>Repeated attempts against usernames that do not exist, from non-private addresses.</p>
+        </div>
+      </div>
+
+      <h2>Run it</h2>
+      <div class="lab-panel">
+        <div class="lab-controls">
+          <button class="cta" type="button" id="run-detector">Run the detector</button>
+          <p class="lab-status" id="lab-status" role="status" aria-live="polite">Press run to parse the bundled log and raise alerts.</p>
+        </div>
+
+        <div class="metric-grid" id="lab-metrics"></div>
+
+        <h3>Alerts</h3>
+        <div class="table-wrap">
+          <table class="alert-table">
+            <caption class="visually-hidden">Alerts raised by the detector on the bundled log</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Severity</th>
+                <th scope="col">Alert</th>
+                <th scope="col">Lines</th>
+                <th scope="col">First seen</th>
+              </tr>
+            </thead>
+            <tbody id="alert-rows">
+              <tr>
+                <td colspan="5" class="muted">Run the detector to populate this table.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Log <span class="muted">— flagged lines are highlighted</span></h3>
+        <pre class="log-view mono" id="log-view" tabindex="0" aria-label="Bundled authentication log">Run the detector to render the log.</pre>
+      </div>
+
+      <h2>Triage drill</h2>
+      <p class="section-lede">
+        Seven cases from the same environment. Choose the disposition you would give each
+        one: <strong>benign</strong>, <strong>investigate</strong>, <strong>block</strong>, or
+        <strong>escalate</strong>. Each answer comes with the reasoning.
+      </p>
+
+      <p class="drill-score" id="drill-score" aria-live="polite"></p>
+
+      <div class="drill" id="drill-list"></div>
+
+      <h2>Reproduce it from a terminal</h2>
+      <p>The same engine runs under Node, which is how it is tested:</p>
+      <pre class="code-block mono"><code>git clone https://github.com/Fortune5560/fortune-owivri-portfolio.git
+cd fortune-owivri-portfolio
+node lab/triage-engine.js          # human-readable report, exit 0 on pass
+node lab/triage-engine.js --json   # machine-readable report
+npm test                           # engine + drill tests</code></pre>
+      <p class="note">
+        The engine exits non-zero if the log has unparsed lines, if any of the six rules
+        fails to fire, or if fewer than two critical alerts are raised — so the site's numbers
+        cannot drift away from the code without the tests complaining.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="../projects/">Projects</a></li>
+      <li><a href="./">Lab</a></li>
+      <li><a href="https://fortune5560.github.io/agentic-ai/" rel="noopener">Agentic AI</a></li>
+      <li><a href="https://fortune5560.github.io/agentic-ai/resume/" rel="noopener">Resume</a></li>
+      <li><a href="https://github.com/Fortune5560" rel="me noopener" target="_blank">GitHub</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+    </ul>
+    <p>© 2026 Fortune Owivri</p>
+  </footer>
+</body>
+</html>

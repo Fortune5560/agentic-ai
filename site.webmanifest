@@ -1,0 +1,33 @@
+{
+  "name": "Fortune Owivri — IT Support, Systems & Security",
+  "short_name": "F. Owivri",
+  "description": "Portfolio: IT support case studies, a SOC home lab, automation work, and a runnable log-triage lab.",
+  "start_url": "/fortune-owivri-portfolio/",
+  "scope": "/fortune-owivri-portfolio/",
+  "display": "standalone",
+  "background_color": "#000010",
+  "theme_color": "#000010",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "business", "education"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

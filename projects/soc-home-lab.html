@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOC Analyst Home Lab — SIEM, Detection &amp; Incident Response | Fortune Owivri</title>
+  <meta name="description" content="A self-directed SOC home lab: Windows and Linux VMs feeding a SIEM, dashboards for authentication events, detection of brute-force and suspicious activity, and a written incident response report." />
+  <link rel="canonical" href="https://fortune5560.github.io/fortune-owivri-portfolio/projects/soc-home-lab.html" />
+  <meta name="theme-color" content="#000010" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../site.js" defer></script>
+
+  <meta property="og:title" content="SOC Analyst Home Lab — SIEM, Detection &amp; Incident Response" />
+  <meta property="og:description" content="VMs feeding a SIEM, authentication dashboards, brute-force detection and a written incident response report — a practice environment, clearly labelled as one." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://fortune5560.github.io/fortune-owivri-portfolio/projects/soc-home-lab.html" />
+  <meta property="og:site_name" content="Fortune Owivri" />
+  <meta property="og:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Fortune Owivri — SOC home lab" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="SOC Analyst Home Lab — SIEM, Detection &amp; Incident Response" />
+  <meta name="twitter:description" content="VMs feeding a SIEM, authentication dashboards, brute-force detection and a written incident response report — a practice environment, clearly labelled as one." />
+  <meta name="twitter:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — SOC home lab" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "SOC Analyst Home Lab — SIEM, Detection &amp; Incident Response",
+    "description": "A self-directed SOC home lab: Windows and Linux VMs feeding a SIEM, dashboards for authentication events, detection of brute-force and suspicious activity, and a written incident response report.",
+    "datePublished": "2026-10-29",
+    "dateModified": "2026-10-29",
+    "author": {
+      "@type": "Person",
+      "name": "Fortune Owivri",
+      "url": "https://fortune5560.github.io/fortune-owivri-portfolio/",
+      "sameAs": ["https://www.linkedin.com/in/fortune-owivri-9a4504289"]
+    },
+    "mainEntityOfPage": "https://fortune5560.github.io/fortune-owivri-portfolio/projects/soc-home-lab.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fortune5560.github.io/fortune-owivri-portfolio/" },
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://fortune5560.github.io/fortune-owivri-portfolio/projects/" },
+      { "@type": "ListItem", "position": 3, "name": "SOC home lab" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand"><a href="../">Fortune Owivri</a></strong>
+      <div class="nav-links">
+        <a href="../#work">Work</a>
+        <a href="./">Projects</a>
+        <a href="../lab/">Lab</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Projects</a></li>
+      <li aria-current="page">SOC home lab</li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <article class="case">
+      <h1>SOC Analyst Home Lab</h1>
+      <p class="lede">A practice environment I built to learn how detection actually feels: logs going in, alerts coming out, and a decision on every one of them.</p>
+      <ul class="case-meta">
+        <li><span class="pill pill-neutral">Self-directed</span></li>
+        <li><span class="pill pill-neutral">Windows + Linux VMs</span></li>
+        <li><span class="pill pill-neutral">Splunk / Wazuh</span></li>
+        <li><span class="proof proof-lab">Lab exercise</span></li>
+      </ul>
+
+      <div class="case-cta">
+        <a class="cta" href="../lab/">Run the log-triage lab</a>
+        <span>A detector over a synthetic auth log, plus seven triage cases.</span>
+      </div>
+
+      <h2>Why I built it</h2>
+      <p>
+        You cannot get hired into a SOC without SOC experience, and you cannot get SOC
+        experience without a SOC. So I built a small one: a couple of virtual machines
+        generating the kinds of logs a real environment produces, a SIEM collecting them,
+        and enough detection content to be forced into judgement calls.
+      </p>
+
+      <h2>The setup</h2>
+      <ul>
+        <li><strong>Virtual machines</strong> — Windows and Linux guests simulating a small mixed environment, because most real estates are a mix and the interesting events happen at the boundary.</li>
+        <li><strong>SIEM</strong> — Splunk / Wazuh, configured for log collection and monitoring. The workflow is the same on either; what changes is the query language.</li>
+        <li><strong>Log sources</strong> — system, authentication and security logs, which is where the cheap and loud attacks show up first.</li>
+        <li><strong>Dashboards</strong> — built to visualise authentication events and alert volume, so abnormal becomes visible as a shape before it becomes a number.</li>
+      </ul>
+
+      <h2>What I detected</h2>
+      <ul>
+        <li><strong>Failed login attempts and brute-force patterns</strong> — the same source hammering accounts, and the distinction between that and a user who has forgotten which password goes where.</li>
+        <li><strong>Password spraying</strong> — many accounts, few attempts each; the pattern that per-account lockout rules never catch.</li>
+        <li><strong>Suspicious scripts and abnormal behaviour</strong> — processes and sessions that do not match the machine's normal rhythm.</li>
+        <li><strong>Successful login after repeated failures</strong> — the event that turns a noisy alert into an incident, and the one worth escalating immediately.</li>
+      </ul>
+
+      <h2>The incident response report</h2>
+      <p>
+        For a simulated attack scenario I wrote the report the way I would want to receive
+        it: what happened, in what order, which evidence supports each step, what was
+        affected, what I did, and what I would have needed to do it faster. Writing it was
+        the part that taught me the most — an alert is easy to spot, a defensible narrative
+        is not.
+      </p>
+
+      <h2>What this is and is not</h2>
+      <p class="note note-warn">
+        <strong>This is a lab.</strong> It is not client work, not a production SOC, and not
+        evidence that I have handled live incidents. What it does demonstrate is that I can
+        stand up the tooling, write detection content, triage an alert to a decision, and
+        document it — which is what an entry-level SOC role asks for.
+      </p>
+
+      <h2>What I'd do next</h2>
+      <ul>
+        <li>Map detections to MITRE ATT&amp;CK techniques explicitly, so coverage gaps are visible instead of assumed.</li>
+        <li>Add a second log source (DNS or proxy) — authentication logs alone give a narrow view.</li>
+        <li>Write detection rules as code and version them, so changes can be reviewed and regressions caught.</li>
+        <li>Build a small answer-key test set for detection logic, the way the <a class="cta-link" href="../lab/">log-triage lab</a> does.</li>
+      </ul>
+
+      <p class="cta-link-wrap">
+        <a class="cta cta-ghost" href="../SOC_Home_Lab_Project.pdf" download>Download the one-page PDF version</a>
+      </p>
+
+    </article>
+  </main>
+
+  <div class="case-nav">
+    <a href="./it-support-case-study.html" class="cta cta-ghost">← Previous: IT support case study</a>
+    <a href="./inventory-automation.html" class="cta">Next: Inventory automation →</a>
+  </div>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="../">Home</a></li>
+      <li><a href="./">Projects</a></li>
+      <li><a href="../lab/">Lab</a></li>
+      <li><a href="https://fortune5560.github.io/agentic-ai/resume/" rel="noopener">Resume</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+    </ul>
+    <p>© 2026 Fortune Owivri</p>
+  </footer>
+</body>
+</html>

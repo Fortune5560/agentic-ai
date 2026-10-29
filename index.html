@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortune Owivri | IT Support, Systems &amp; Security</title>
+  <meta name="description" content="IT support and operations professional in Ibadan: troubleshooting, Windows and Linux systems, inventory automation, and hands-on SIEM monitoring in a home SOC lab. Resume, case studies and a worked log-triage exercise." />
+  <link rel="canonical" href="https://fortune5560.github.io/fortune-owivri-portfolio/" />
+  <meta name="theme-color" content="#000010" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./site.js" defer></script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fortune Owivri | IT Support, Systems &amp; Security" />
+  <meta property="og:description" content="I fix systems and explain what broke: IT support, inventory automation, and hands-on SIEM monitoring in a home SOC lab." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fortune5560.github.io/fortune-owivri-portfolio/" />
+  <meta property="og:site_name" content="Fortune Owivri" />
+  <meta property="og:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta property="og:image:width" content="1424" />
+  <meta property="og:image:height" content="752" />
+  <meta property="og:image:alt" content="Fortune Owivri — IT support, systems and security" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@slatty5560" />
+  <meta name="twitter:title" content="Fortune Owivri | IT Support, Systems &amp; Security" />
+  <meta name="twitter:description" content="IT support, inventory automation, and hands-on SIEM monitoring in a home SOC lab." />
+  <meta name="twitter:image" content="https://fortune5560.github.io/fortune-owivri-portfolio/og-image.png" />
+  <meta name="twitter:image:alt" content="Fortune Owivri — IT support, systems and security" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://fortune5560.github.io/fortune-owivri-portfolio/#person",
+        "name": "Fortune Owivri",
+        "url": "https://fortune5560.github.io/fortune-owivri-portfolio/",
+        "jobTitle": "IT Support & Operations",
+        "email": "mailto:fortuneowivri@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ibadan",
+          "addressRegion": "Oyo State",
+          "addressCountry": "NG"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "ESPAM Formation University"
+        },
+        "knowsAbout": [
+          "IT support",
+          "Windows administration",
+          "Linux",
+          "Network troubleshooting",
+          "SIEM monitoring",
+          "Incident response",
+          "Inventory automation"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/fortune-owivri-9a4504289",
+          "https://x.com/slatty5560",
+          "https://github.com/Fortune5560"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fortune5560.github.io/fortune-owivri-portfolio/#website",
+        "name": "Fortune Owivri — Portfolio",
+        "url": "https://fortune5560.github.io/fortune-owivri-portfolio/",
+        "author": { "@id": "https://fortune5560.github.io/fortune-owivri-portfolio/#person" }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body data-stars>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <strong class="nav-brand"><a href="./">Fortune Owivri</a></strong>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="./lab/">Lab</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="hero-eyebrow">Ibadan, Nigeria · open to IT support &amp; SOC roles</p>
+    <h1>I fix systems and explain what broke</h1>
+    <p>
+      I'm Fortune Owivri. Five years of IT support and operations — warehouses, field
+      work, first-line support — plus a home SOC lab where I practise the monitoring
+      side. I like the part of the job where you find the cause instead of restarting
+      until it goes away.
+      <span class="hero-accent">Every claim on this site says where it came from.</span>
+    </p>
+
+    <div class="hero-actions">
+      <a class="cta" href="#work">See the work</a>
+      <a class="cta cta-ghost" href="./lab/">Try the log-triage lab</a>
+    </div>
+
+    <ul class="social-links">
+      <li>
+        <a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.6c0-1.34-.03-3.07-1.9-3.07-1.9 0-2.19 1.46-2.19 2.97V21H9z"/></svg>
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/slatty5560" rel="me noopener" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / @slatty5560
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Fortune5560" rel="me noopener" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.8.55A11.5 11.5 0 0 0 23.5 12A11.5 11.5 0 0 0 12 .5z"/></svg>
+          GitHub
+        </a>
+      </li>
+    </ul>
+
+    <ul class="fact-strip">
+      <li><strong>5 yrs</strong> IT support &amp; operations</li>
+      <li><strong>B.Sc.</strong> Computer Science, Summa Cum Laude</li>
+      <li><strong>SOC lab</strong> Splunk / Wazuh</li>
+      <li><strong>Google</strong> certs in progress</li>
+    </ul>
+  </header>
+
+  <main id="main">
+    <!-- ============ WORK ============ -->
+    <section id="work">
+      <h2>Selected work</h2>
+      <p class="section-lede">
+        Three case studies and one live exercise. Each card says what kind of evidence
+        sits behind it — a job result, a lab exercise, or a test I can re-run.
+      </p>
+
+      <div class="grid-2">
+        <a class="card" href="./projects/it-support-case-study.html">
+          <p class="card-eyebrow">Case study · Clearwox Systems</p>
+          <h3>IT support: 95% resolution, 30% less downtime</h3>
+          <p>
+            Field support across client sites — Windows faults, network connectivity,
+            access problems, failing hardware — plus the documentation that kept the
+            tickets usable.
+          </p>
+          <p class="card-stat"><strong>95% resolution rate</strong> <span class="proof proof-role">Job result</span></p>
+          <p class="card-stat-sub">Self-reported from my own ticket records at Clearwox Systems (2021). Method on request.</p>
+          <p class="cta-link">Read the case study →</p>
+        </a>
+
+        <a class="card" href="./projects/soc-home-lab.html">
+          <p class="card-eyebrow">Lab · self-directed</p>
+          <h3>SOC home lab: SIEM, alerts, incident response</h3>
+          <p>
+            Windows and Linux VMs feeding a SIEM, dashboards built around authentication
+            events, and a written incident response report for a simulated attack.
+          </p>
+          <p class="card-stat"><span class="proof proof-lab">Lab exercise</span> <span class="proof proof-tested">Runnable</span></p>
+          <p class="card-stat-sub">A practice environment — not client work. The triage exercise on this site runs the same kind of rules.</p>
+          <p class="cta-link">Read the lab write-up →</p>
+        </a>
+
+        <a class="card" href="./projects/inventory-automation.html">
+          <p class="card-eyebrow">Project · automation</p>
+          <h3>Inventory automation web app</h3>
+          <p>
+            A small HTML/CSS/JavaScript tool for routine stock tasks: CRUD operations,
+            form validation, and error handling instead of silent failure.
+          </p>
+          <p class="card-stat"><strong>40% faster retrieval</strong> <span class="proof proof-role">Job result</span></p>
+          <p class="card-stat-sub">From digitizing the inventory database at Rom Oil (2024–2025). The retrieval figure is the job's, not the demo app's.</p>
+          <p class="cta-link">Read the project →</p>
+        </a>
+
+        <a class="card" href="./lab/">
+          <p class="card-eyebrow">Interactive · runs in your browser</p>
+          <h3>Log-triage lab</h3>
+          <p>
+            A deterministic detector runs over a bundled auth log, raises alerts, and
+            then asks you to triage seven cases. Scored against an answer key.
+          </p>
+          <p class="card-stat"><strong>7 cases</strong> <span class="proof proof-tested">Tested</span></p>
+          <p class="card-stat-sub">Every number on that page is computed by running the detector. The log is synthetic — it says so, loudly.</p>
+          <p class="cta-link">Open the lab →</p>
+        </a>
+      </div>
+
+      <div class="callout">
+        <h3>Building agentic AI too</h3>
+        <p>
+          My other site covers autonomous agents: an ops agent with guardrails, a live
+          sandbox with a repeatable test suite, and the design write-ups behind them.
+        </p>
+        <a class="cta cta-ghost" href="https://fortune5560.github.io/agentic-ai/" rel="noopener">Visit the agentic AI site →</a>
+      </div>
+    </section>
+
+    <!-- ============ WHAT I DO ============ -->
+    <section id="what-i-do">
+      <h2>What I actually do</h2>
+      <p class="section-lede">
+        Three things, in the order they show up in a working week.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Keep people working</h3>
+          <p>
+            Diagnose and fix Windows and Linux machines, network faults, access problems
+            and failing hardware — onsite and remote — and write the ticket up so the next
+            person does not start from zero.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Watch for what looks wrong</h3>
+          <p>
+            Collect authentication and system logs into a SIEM, build dashboards that
+            surface the events worth a look, and work an alert through to a decision
+            instead of a shrug.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Remove the manual step</h3>
+          <p>
+            Turn repeated work into small tools — an inventory database instead of a
+            notebook, a scripted workflow instead of a ritual — and check the result
+            against the old way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EVIDENCE NOTE ============ -->
+    <section id="evidence">
+      <h2>How to read the numbers here</h2>
+      <div class="container article-narrow text-left">
+        <p>
+          I use three kinds of labels on this site, and they mean different things:
+        </p>
+        <ul>
+          <li><strong>Job result</strong> — a figure from work I was paid to do, taken from my own records. Real, self-reported, and not independently audited. The baseline and measurement window are available on request.</li>
+          <li><strong>Lab exercise</strong> — something I built and ran to practise, in a home environment. It demonstrates method, not client impact.</li>
+          <li><strong>Tested</strong> — a number produced by running code in front of you, which you can reproduce. The log-triage lab is the only place that applies.</li>
+        </ul>
+        <p>
+          I don't publish a figure for work I can't evidence. Where a number belongs to a
+          job and not to a project, I say which job.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="section-lede">
+        Five roles since 2021, in support, operations and warehousing. Full history on the
+        <a class="cta-link" href="https://fortune5560.github.io/agentic-ai/resume/" rel="noopener">resume</a>.
+      </p>
+
+      <ol class="timeline">
+        <li>
+          <div class="job-head">
+            <h3 class="job-role">Office Assistant / IT Support</h3>
+            <span class="job-dates">Jun 2025 – Present</span>
+          </div>
+          <p class="job-org">RCCG Solution Assembly, Oyo Province · Ibadan</p>
+          <ul>
+            <li>Run live technical support for streaming and video recording, keeping services going through equipment faults and last-minute changes.</li>
+            <li>Maintain the digital and hardcopy document system, improving access and retrieval across the provincial office.</li>
+            <li>Track office supplies and tighten procurement cycles to avoid stockouts.</li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="job-head">
+            <h3 class="job-role">Store Clerk / Technical Operations Assistant</h3>
+            <span class="job-dates">Jul 2024 – Mar 2025</span>
+          </div>
+          <p class="job-org">Rom Oil (PEOPL) · Ibadan</p>
+          <ul>
+            <li><strong>Digitized the inventory database, cutting record retrieval time by 40%.</strong></li>
+            <li>Improved spare-parts availability by 30%, reducing operational downtime.</li>
+            <li>Ran periodic stock audits, reducing discrepancies by 15%.</li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="job-head">
+            <h3 class="job-role">Warehouse Manager</h3>
+            <span class="job-dates">Nov 2023 – Jun 2024</span>
+          </div>
+          <p class="job-org">PADVAP Publications Ltd. · Ibadan</p>
+          <ul>
+            <li><strong>Cut stock loss by 18%</strong> by implementing stock reconciliation procedures.</li>
+            <li>Improved warehouse efficiency by 35% through workflow optimization and reduced fulfillment time by 20%.</li>
+            <li>Supervised 10+ staff and enforced safety protocols, decreasing incidents by 25%.</li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="job-head">
+            <h3 class="job-role">Junior Developer / IT Support Assistant</h3>
+            <span class="job-dates">Mar 2022 – Sep 2022</span>
+          </div>
+          <p class="job-org">Pitason &amp; Smart Pro · Ibadan</p>
+          <ul>
+            <li><strong>Resolved 90% of user-reported technical issues on first contact.</strong></li>
+            <li>Built lightweight web applications to automate client operations.</li>
+            <li>Tested and documented software bugs and their fixes.</li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="job-head">
+            <h3 class="job-role">Field Engineer (IT Support &amp; Systems Optimization)</h3>
+            <span class="job-dates">Apr 2021 – Sep 2021</span>
+          </div>
+          <p class="job-org">Clearwox Systems · Ibadan</p>
+          <ul>
+            <li><strong>Delivered onsite and remote IT support with a 95% resolution rate.</strong></li>
+            <li>Reduced downtime by 30% by supporting system upgrades and optimizations.</li>
+            <li>Maintained hardware, networks and application reliability across client sites.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p class="note">
+        <strong>On the two-year gap (2022–2023):</strong> nothing to hide, nothing to add.
+        I was studying and applying; the degree completion sits in that window.
+      </p>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="section-lede">
+        Labelled honestly. “Solid” means I have done it repeatedly with supervision
+        available; “learning” means I can do the basics and I am still building.
+      </p>
+
+      <div class="grid-2">
+        <div class="card skill-card">
+          <h3>Support &amp; systems</h3>
+          <ul class="skill-list">
+            <li>Windows troubleshooting &amp; admin <span class="level level-solid">Solid</span></li>
+            <li>Hardware diagnostics &amp; repair <span class="level level-solid">Solid</span></li>
+            <li>Remote support (RDP, AnyDesk, TeamViewer) <span class="level level-solid">Solid</span></li>
+            <li>Linux command line <span class="level">Basic</span></li>
+            <li>Virtualization (VirtualBox, VMware) <span class="level">Working</span></li>
+          </ul>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Networking &amp; security</h3>
+          <ul class="skill-list">
+            <li>Network troubleshooting &amp; config <span class="level">Working</span></li>
+            <li>TCP/IP fundamentals (CCNA course) <span class="level level-learning">Learning</span></li>
+            <li>SIEM — Splunk / Wazuh <span class="level level-learning">Learning</span></li>
+            <li>Log analysis &amp; alert triage <span class="level">Working</span></li>
+            <li>Incident response procedure <span class="level level-learning">Learning</span></li>
+          </ul>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Automation &amp; code</h3>
+          <ul class="skill-list">
+            <li>HTML / CSS <span class="level level-solid">Solid</span></li>
+            <li>JavaScript <span class="level">Working</span></li>
+            <li>Git &amp; GitHub <span class="level">Working</span></li>
+            <li>MySQL <span class="level">Basic</span></li>
+            <li>n8n workflow automation <span class="level">Working</span></li>
+          </ul>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Operations &amp; reporting</h3>
+          <ul class="skill-list">
+            <li>Inventory &amp; stock control <span class="level level-solid">Solid</span></li>
+            <li>Procurement &amp; logistics support <span class="level level-solid">Solid</span></li>
+            <li>Documentation &amp; reporting <span class="level level-solid">Solid</span></li>
+            <li>Ticket handling &amp; escalation <span class="level level-solid">Solid</span></li>
+            <li>Team supervision <span class="level">Working</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">
+        I deliberately don't list myself as an “expert” in anything at this stage — the
+        level labels above are the claim, and I am happy to be tested on any of them.
+      </p>
+    </section>
+
+    <!-- ============ CERTIFICATIONS + EDUCATION ============ -->
+    <section id="certifications">
+      <h2>Certifications &amp; education</h2>
+      <p class="section-lede">
+        Statuses are current, not aspirational.
+      </p>
+
+      <ul class="cert-list">
+        <li>
+          <span class="cert-name">Google Cybersecurity Professional Certificate</span>
+          <span class="cert-status in-progress">In progress</span>
+        </li>
+        <li>
+          <span class="cert-name">Google IT Support Professional Certificate</span>
+          <span class="cert-status in-progress">In progress</span>
+        </li>
+        <li>
+          <span class="cert-name">Cisco CCNA — Introduction to Networks</span>
+          <span class="cert-status in-progress">Ongoing</span>
+        </li>
+        <li>
+          <span class="cert-name">CompTIA Security+</span>
+          <span class="cert-status">Planned</span>
+        </li>
+      </ul>
+
+      <div class="container article-narrow text-left" style="margin-top: 2rem;">
+        <p>
+          <strong>B.Sc. Computer Science</strong> — ESPAM Formation University, Porto-Novo,
+          Benin Republic (2020–2023). Graduated <strong>Summa Cum Laude, 4.0 GPA</strong>.
+        </p>
+        <p class="muted">
+          Secondary and primary education: Calvary International College and Calvary
+          Heritage Group of Schools, Ibadan.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p class="section-lede">
+        I'm looking for IT support, systems administration or entry-level SOC work in
+        Nigeria or remote. If you have a role — or a broken machine and an opinion — I
+        answer email quickly.
+      </p>
+
+      <div class="contact-actions">
+        <a class="cta" href="mailto:fortuneowivri@gmail.com?subject=Portfolio%20enquiry">Email me</a>
+        <a class="cta cta-ghost" href="https://fortune5560.github.io/agentic-ai/resume/" rel="noopener">Download my resume</a>
+      </div>
+
+      <div class="newsletter">
+        <h3>Get the agent template</h3>
+        <p>
+          The agent template I hand out. Drop your name and an email address and it gets
+          sent to you — no pitch attached.
+        </p>
+        <a class="cta" href="https://tally.so/r/44Jqeo" target="_blank" rel="noopener">Send me the template →</a>
+        <p class="fine-print">
+          Opens a Tally form in a new tab. Two fields — name and email. I don't sell or
+          share the list, and you can ask me to delete your entry at any time.
+        </p>
+      </div>
+
+      <p class="fine-print">
+        Phone number available on request. Ibadan, Oyo State, Nigeria.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="./">Home</a></li>
+      <li><a href="./projects/">All projects</a></li>
+      <li><a href="./lab/">Lab</a></li>
+      <li><a href="https://fortune5560.github.io/agentic-ai/" rel="noopener">Agentic AI</a></li>
+      <li><a href="https://fortune5560.github.io/agentic-ai/resume/" rel="noopener">Resume</a></li>
+      <li><a href="https://www.linkedin.com/in/fortune-owivri-9a4504289" rel="me noopener" target="_blank">LinkedIn</a></li>
+      <li><a href="https://x.com/slatty5560" rel="me noopener" target="_blank">X</a></li>
+    </ul>
+    <p>© 2026 Fortune Owivri</p>
+    <p class="footer-note">Ibadan, Nigeria · B.Sc. Computer Science, Summa Cum Laude</p>
+  </footer>
+</body>
+</html>

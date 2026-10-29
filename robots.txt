@@ -1,0 +1,7 @@
+# Fortune Owivri — portfolio
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /tests/
+
+Sitemap: https://fortune5560.github.io/fortune-owivri-portfolio/sitemap.xml
