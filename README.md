@@ -3,6 +3,29 @@
 A static site about the agentic AI systems I build, plus a **testable** ops-agent
 demo that runs entirely in the browser.
 
+## Augur — the agent stack
+
+| Name | What it is | Evidence |
+| --- | --- | --- |
+| **Augur Ops** | Incident triage with explicit guardrails, approved playbooks and escalation for anything irreversible or over budget. Blueprint #1 plus a runnable sandbox. | 14/14 scenarios against an answer key (computed live) |
+| **Augur Research** | Source discovery, credibility filtering and verified synthesis, with a human signing off before anything ships. Blueprint #2. | Blueprint — no production number claimed |
+| **Augur Desk** | Task intake, planning and follow-through that never sends, books or commits on a person's behalf. Blueprint #3. | Blueprint — no result claimed |
+| **Augur Supply** | Demand signals in, replenishment decisions out, with the assumptions a human should check surfaced. | In progress — no agent result claimed |
+
+**Naming rules.** "Augur" is the family; the suffix is the domain. Use the full
+`Augur <Domain>` in a title or on first mention in a page, `Augur Ops` / `Augur
+Research` / `Augur Desk` thereafter. Never "Augur AI" (redundant) and never "the
+Augur" as if it were one agent — they are three, with a fourth in progress.
+
+**The name.** A Roman augur read the signs and said what was coming. That is the
+job here: watch the signals, reach a decision, and stop before the irreversible
+one. It pairs with the surname — Fortune is the luck, Augur is the one who reads it.
+
+**Handles.** Every bare word is taken on npm and GitHub (`augur`, `vigil`,
+`fathom` — all occupied). The brand lives as compounds: `augur-ops`,
+`Augur Research`, `getaugur`, `augur.systems`. The doc root stays the GitHub Pages
+project path.
+
 **Live site:** <https://fortune5560.github.io/agentic-ai/>
 
 No build step for the site itself — plain HTML, CSS and progressive-enhancement
@@ -17,10 +40,11 @@ JS. Dependencies exist only for the tests.
 ├── site.js                     # Starfield, scroll-reveal, back-to-top
 ├── favicon.svg / icon-*.png    # Icons (SVG source + rasterised)
 ├── apple-touch-icon.png        # 180×180 iOS home-screen icon
-├── og-image.png                # Social preview image (1424×752)
+├── og-image.png                # Social preview image (1424×752, Augur wordmark)
 ├── site.webmanifest            # PWA/install metadata
 ├── rss.xml / sitemap.xml       # Feed + sitemap
 ├── robots.txt
+├── scripts/gen-og-image.py     # Regenerates og-image.png (Pillow)
 ├── blueprints/
 │   ├── index.html              # Blueprints hub
 │   ├── ops-agent.html          # #1 — Autonomous Ops Agent

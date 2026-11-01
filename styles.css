@@ -223,6 +223,34 @@ header.hero p {
   font-weight: 500;
 }
 
+/* Brand line — introduces the agent-family name under the hero paragraph. */
+.hero-eyebrow {
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  padding: 0.28rem 0.8rem;
+  border: 1px solid var(--border-glow-strong);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(0, 255, 255, 0.06);
+}
+
+.brand-line {
+  max-width: 720px;
+  margin: 1.5rem auto 0;
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.brand-line strong {
+  color: var(--accent-alt);
+  letter-spacing: 0.02em;
+}
+
 /* ==============================
    Buttons
    ============================== */

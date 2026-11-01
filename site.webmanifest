@@ -1,14 +1,22 @@
 {
-  "name": "Agentic AI",
-  "short_name": "Agentic AI",
-  "description": "Education-first blueprints for building safe, auditable autonomous AI agents.",
+  "name": "Augur — Fortune Owivri Agentic AI",
+  "short_name": "Augur",
+  "description": "Augur: the agent stack Fortune Owivri builds and tests — Augur Ops, Augur Research, Augur Desk, with guardrails, blueprints and repeatable test suites.",
   "start_url": "/agentic-ai/",
   "scope": "/agentic-ai/",
   "display": "standalone",
   "background_color": "#000010",
   "theme_color": "#000010",
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
