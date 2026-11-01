@@ -50,9 +50,10 @@ SUMMARY = (
     "troubleshooting, inventory systems and workflow automation. Digitized an inventory "
     "database that cut record retrieval time by <b>40%</b>, resolved <b>90%</b> of "
     "user-reported issues on first contact, and cut stock loss by <b>18%</b> with "
-    "reconciliation procedures. Currently building agentic AI tooling — LLM planning, "
-    "n8n orchestration, and guardrails with repeatable tests — and working toward "
-    "Google Cybersecurity and CompTIA Security+ certification."
+    "reconciliation procedures. Now working independently as the creator of "
+    "<b>Augur</b>, an agent stack (Augur Ops, Augur Research, Augur Desk) built with "
+    "LLM planning, n8n orchestration, explicit guardrails and repeatable test suites — "
+    "and working toward Google Cybersecurity and CompTIA Security+ certification."
 )
 
 SKILLS = [
@@ -71,10 +72,29 @@ SKILLS = [
 
 EXPERIENCE = [
     {
+        "role": "Independent Contractor — Creator of Augur",
+        "org": "Self-employed",
+        "place": "Ibadan, Nigeria",
+        "dates": "June 2026 – Present",
+        "bullets": [
+            "Design, build and test <b>Augur</b>, an agent stack for operations, research and "
+            "personal productivity — Augur Ops, Augur Research and Augur Desk — publishing the "
+            "guardrails, failure modes and blueprints alongside each one.",
+            "Wrote the guardrail logic for Augur Ops as a deterministic rules engine and backed "
+            "it with a <b>14-scenario test suite</b> against an independently written answer key; "
+            "the CLI exits non-zero if a decision diverges.",
+            "Built and published a log-triage exercise (six detection rules over a synthetic auth "
+            "log, a seven-case triage drill) with <b>15 tests</b> covering rule coverage, "
+            "determinism and drill scoring.",
+            "Ship public, inspectable demos so claims can be re-run rather than trusted, and hand "
+            "the starting template to other builders through a public request form.",
+        ],
+    },
+    {
         "role": "Office Assistant / IT Support",
         "org": "RCCG Solution Assembly, Oyo Province",
         "place": "Ibadan, Nigeria",
-        "dates": "June 2025 – Present",
+        "dates": "June 2025 – June 2026",
         "bullets": [
             "Provide live technical support for streaming and video recording, keeping services uninterrupted through outages, equipment faults and last-minute changes.",
             "Maintain the digital and hardcopy document system, improving access and retrieval across the provincial office.",
@@ -136,7 +156,7 @@ EXPERIENCE = [
 
 PROJECTS = [
     {
-        "name": "Operations agent with guardrails",
+        "name": "Augur Ops — operations agent with guardrails",
         "meta": "Public demo · deterministic rules engine · 14-scenario test suite",
         "url": "https://fortune5560.github.io/agentic-ai/demo/",
         "bullets": [
@@ -147,7 +167,7 @@ PROJECTS = [
         ],
     },
     {
-        "name": "Research &amp; reporting agent",
+        "name": "Augur Research — reporting agent",
         "meta": "Design write-up and blueprint",
         "url": "https://fortune5560.github.io/agentic-ai/blueprints/research-agent.html",
         "bullets": [
@@ -156,7 +176,7 @@ PROJECTS = [
         ],
     },
     {
-        "name": "Stock &amp; replenishment agent",
+        "name": "Augur Supply — stock &amp; replenishment agent",
         "meta": "In progress — builds on the inventory work above",
         "url": "",
         "bullets": [
