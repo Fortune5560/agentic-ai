@@ -1,0 +1,346 @@
+{
+  "_about": "Answer key for consent-lab/model/measure.mjs. Written from the policy in consent-lab/consent-engine.js before any model output was seen. Notes are synthetic; no real person or facility is described.",
+  "version": 1,
+  "policy": {
+    "max_consent_months": 24,
+    "min_age": 18,
+    "languages": [
+      "en",
+      "yo"
+    ],
+    "scopes": [
+      "assessment",
+      "counselling_notes",
+      "referral",
+      "medication",
+      "followup_contact"
+    ],
+    "reject_reasons": [
+      "no_expiry",
+      "expiry_too_long",
+      "invalid_expiry",
+      "no_scope",
+      "contact_detail_present",
+      "minor_without_guardian",
+      "no_witness",
+      "withdrawn",
+      "unsupported_language"
+    ]
+  },
+  "items": [
+    {
+      "id": "N01",
+      "note": "Amaka, 26, came in for a first assessment. She agreed to assessment and counselling notes being kept. Consent for six months. I read the statements in English and the health worker witnessed it.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N02",
+      "note": "Tunde, 31, agreed to assessment and referral being recorded. He did not say for how long, and I did not ask. Witnessed by the CHEW.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "no_expiry",
+        "consent_months": null,
+        "scopes": [
+          "assessment",
+          "referral"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N03",
+      "note": "Blessing, 40, wants her notes kept for three years so she does not have to repeat herself. Assessment and counselling notes. Witnessed.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "expiry_too_long",
+        "consent_months": 36,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N04",
+      "note": "Assessment and counselling notes, six months, witnessed. She asked me to write her number 0803 555 1212 on the file so the clinic can call her.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "contact_detail_present",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": true
+      }
+    },
+    {
+      "id": "N05",
+      "note": "Chidi is 16. His mother came with him and gave consent on his behalf; she is named as guardian. Assessment and counselling notes for twelve months, read in English, witnessed.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 12,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N06",
+      "note": "Chidi is 15 and came alone. He agreed to assessment and counselling notes for six months. He said his parents must not know. Witnessed by the health worker.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "minor_without_guardian",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N07",
+      "note": "Aduke, 34. A ti ka gbogbo alaye fun u ni Yoruba. O gba pe a le fi assessment ati counselling notes pamọ fun osu mefa. Witnessed by the CHEW.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "yo",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N08",
+      "note": "Yemi, 29, said she does not mind what we write, just keep it. Six months, English, witnessed. No categories were agreed.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "no_scope",
+        "consent_months": 6,
+        "scopes": [],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N09",
+      "note": "Referral to the general hospital only. Twelve months. Read in English. Witnessed by the nurse.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 12,
+        "scopes": [
+          "referral"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N10",
+      "note": "Medication notes only, three months. The only consent form left in the office was in French, and she signed it without anyone reading it to her.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "unsupported_language",
+        "consent_months": 3,
+        "scopes": [
+          "medication"
+        ],
+        "language": "fr",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N11",
+      "note": "Assessment and counselling notes, six months, witnessed. She gave her email address oluwa@example.com for the file.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "contact_detail_present",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": true
+      }
+    },
+    {
+      "id": "N12",
+      "note": "She is 17 and her aunt, named as guardian, consented. Assessment and counselling notes for six months, English, witnessed.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N13",
+      "note": "Assessment, counselling notes and follow-up contact. Twenty-four months. English. Witnessed.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 24,
+        "scopes": [
+          "assessment",
+          "counselling_notes",
+          "followup_contact"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N14",
+      "note": "Assessment and counselling notes for twenty-five months. English. Witnessed by the health worker.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "expiry_too_long",
+        "consent_months": 25,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N15",
+      "note": "Assessment and counselling notes, six months, witnessed. Halfway through she said she has changed her mind and does not want anything kept.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "withdrawn",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N16",
+      "note": "She cannot read. I read all five statements to her in Yoruba and she agreed verbally. Assessment and counselling notes, six months. The CHEW witnessed.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "yo",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N17",
+      "note": "Assessment notes, six months, English. Nobody else was in the room and she was not recorded as self-consenting.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "no_witness",
+        "consent_months": 6,
+        "scopes": [
+          "assessment"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N18",
+      "note": "She is 30, recorded the statements herself on the tablet, and marked it as self-recorded. Assessment and counselling notes, six months, English. No witness.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": false,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N19",
+      "note": "Assessment and counselling notes for six months, English, witnessed. Next appointment set for 2026-11-20 in the same room.",
+      "expect": {
+        "decision": "accept",
+        "reject_reason": "",
+        "consent_months": 6,
+        "scopes": [
+          "assessment",
+          "counselling_notes"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    },
+    {
+      "id": "N20",
+      "note": "He wants it kept for this one session only, zero months, nothing after today. Assessment notes. Witnessed.",
+      "expect": {
+        "decision": "reject",
+        "reject_reason": "invalid_expiry",
+        "consent_months": 0,
+        "scopes": [
+          "assessment"
+        ],
+        "language": "en",
+        "witness_required": true,
+        "contains_contact_details": false
+      }
+    }
+  ]
+}
