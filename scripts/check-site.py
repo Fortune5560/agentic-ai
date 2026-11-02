@@ -263,7 +263,7 @@ def check_xml() -> None:
 def js_generated_classes() -> set[str]:
     """Class names that only ever appear at runtime, e.g. from classList.add()."""
     found: set[str] = set()
-    for rel in ("site.js", "demo/demo.js"):
+    for rel in ("site.js", "demo/demo.js", "consent-lab/consent-lab.js"):
         with open(os.path.join(ROOT, rel), encoding="utf-8") as fh:
             src = fh.read()
         for pattern in (

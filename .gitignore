@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+consent-lab/model/results/*.json
+!consent-lab/model/results/.gitkeep

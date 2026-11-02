@@ -4,12 +4,15 @@
   "private": true,
   "description": "Static site for Fortune Owivri's agentic AI work, plus a testable ops-agent demo.",
   "scripts": {
-    "test": "node demo/ops-agent-engine.js && node --test tests/demo-ui.test.mjs",
+    "test": "node demo/ops-agent-engine.js && node consent-lab/consent-engine.js && node --test tests/demo-ui.test.mjs tests/consent.test.mjs tests/consent-ui.test.mjs tests/model-harness.test.mjs",
     "test:engine": "node demo/ops-agent-engine.js",
-    "test:ui": "node --test tests/demo-ui.test.mjs",
+    "test:ui": "node --test tests/demo-ui.test.mjs tests/consent-ui.test.mjs",
     "check": "python3 scripts/check-site.py",
     "build:resume": "python3 scripts/build-resume.py",
-    "serve": "python3 -m http.server 8080"
+    "serve": "python3 -m http.server 8080",
+    "test:consent": "node consent-lab/consent-engine.js && node --test tests/consent.test.mjs",
+    "test:model": "node --test tests/model-harness.test.mjs",
+    "measure": "node consent-lab/model/measure.mjs --dry-run"
   },
   "devDependencies": {
     "jsdom": "^30.1.3"

@@ -1,7 +1,8 @@
 # Fortune Owivri — Agentic AI
 
-A static site about the agentic AI systems I build, plus a **testable** ops-agent
-demo that runs entirely in the browser.
+A static site about the agentic AI systems I build, plus two **testable** demos
+that run entirely in the browser: an ops-agent sandbox, and a consent kit for
+community mental-health work.
 
 ## Augur — the agent stack
 
@@ -11,6 +12,7 @@ demo that runs entirely in the browser.
 | **Augur Research** | Source discovery, credibility filtering and verified synthesis, with a human signing off before anything ships. Blueprint #2. | Blueprint — no production number claimed |
 | **Augur Desk** | Task intake, planning and follow-through that never sends, books or commits on a person's behalf. Blueprint #3. | Blueprint — no result claimed |
 | **Augur Supply** | Demand signals in, replenishment decisions out, with the assumptions a human should check surfaced. | In progress — no agent result claimed |
+| **Consent kit** | Not an agent: the guardrail layer underneath one. Consent records for community mental-health work — expiry required, guardian rules, hash-chained audit log, AES-GCM sealing, plus a published harness for measuring a small local extraction model. | 24/24 answer-key cases; 10 page tests. **No model result yet** |
 
 **Naming rules.** "Augur" is the family; the suffix is the domain. Use the full
 `Augur <Domain>` in a title or on first mention in a page, `Augur Ops` / `Augur
@@ -56,13 +58,27 @@ JS. Dependencies exist only for the tests.
 │   ├── ops-agent-engine.js     # The engine + answer key + test harness
 │   └── artifacts/
 │       └── demo-results.json   # Last harness run (machine-readable)
+├── consent-lab/
+│   ├── index.html              # Consent kit page (demo 2)
+│   ├── consent-lab.js          # Wires the page to the engine (decides nothing itself)
+│   ├── consent-engine.js       # Policy + answer key + CLI, shared by page and tests
+│   └── model/
+│       ├── prompt.md           # Extraction prompt ({{NOTE}} slot, one JSON object out)
+│       ├── answer-key.json     # 20 synthetic notes, 10 outcomes, 9 reject reasons
+│       ├── score.mjs           # Field-by-field scoring
+│       ├── measure.mjs         # Ollama-only runner (no hosted fallback)
+│       └── results/            # Written by measure.mjs — empty until a model is run
 ├── resume/
 │   ├── index.html              # Print-ready resume page (generated)
 │   └── Fortune-Owivri-Resume.pdf  # ATS-friendly PDF (generated)
 ├── scripts/
 │   ├── check-site.py           # Stdlib-only link/markup/a11y checks
 │   └── build-resume.py         # Single source of truth for the resume
-└── tests/demo-ui.test.mjs      # jsdom tests for the sandbox page
+└── tests/
+    ├── demo-ui.test.mjs        # jsdom tests for the sandbox page
+    ├── consent.test.mjs        # 20 engine tests
+    ├── consent-ui.test.mjs     # 10 jsdom tests for the consent page
+    └── model-harness.test.mjs  # 12 tests: key completeness, scorer, dry-run
 ```
 
 ## Run locally
@@ -120,8 +136,10 @@ numbers as production results.
 
 ```bash
 npm install          # jsdom, dev-only
-npm test             # engine harness + sandbox UI tests
+npm test             # both engine harnesses + 48 tests across four suites
 npm run check        # link integrity, duplicate ids, JSON-LD, XML, sitemap
+npm run test:consent # consent engine (24/24) + its engine and UI tests
+npm run measure      # dry-run the model harness; validates key + prompt
 ```
 
 `scripts/check-site.py` needs only the Python standard library. It verifies
